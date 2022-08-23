@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+          integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+          crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+          crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="css.css">
+  <style type="text/css">
+
+  </style>
+</head>
+<body>
+<h2 class="text-info text-center my-3">Danh sách hợp đồng</h2>
+<table class="table" id="tableCustomer">
+  <thead>
+  <tr class="table-active">
+    <th>ID</th>
+    <th>Start date</th>
+    <th>End date</th>
+    <th>Deposit</th>
+    <th>Total money</th>
+    <th>Customer</th>
+    <th>Employee</th>
+    <th>Service</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr class="table-danger">
+    <th>1</th>
+    <td>01/01/2000</td>
+    <td>01/01/2001</td>
+    <td>1000000</td>
+    <td>5000000</td>
+    <td>Nguyễn Văn A</td>
+    <td>Lê Hùng A</td>
+    <td>Villa Beach Front</td>
+  </tr>
+  <tr class="table-success">
+    <th>2</th>
+    <td>01/01/2000</td>
+    <td>01/01/2001</td>
+    <td>1000000</td>
+    <td>5000000</td>
+    <td>Nguyễn Văn A</td>
+    <td>Lê Hùng A</td>
+    <td>Villa Beach Front</td>
+  </tr>
+  <tr class="table-danger">
+    <th>3</th>
+    <td>01/01/2000</td>
+    <td>01/01/2001</td>
+    <td>1000000</td>
+    <td>5000000</td>
+    <td>Nguyễn Văn A</td>
+    <td>Lê Hùng A</td>
+    <td>Villa Beach Front</td>
+  </tr>
+  <tr class="table-success">
+    <th>4</th>
+    <td>01/01/2000</td>
+    <td>01/01/2001</td>
+    <td>1000000</td>
+    <td>5000000</td>
+    <td>Nguyễn Văn A</td>
+    <td>Lê Hùng A</td>
+    <td>Villa Beach Front</td>
+  </tr>
+  <tr class="table-danger">
+    <th>5</th>
+    <td>01/01/2000</td>
+    <td>01/01/2001</td>
+    <td>1000000</td>
+    <td>5000000</td>
+    <td>Nguyễn Văn A</td>
+    <td>Lê Hùng A</td>
+    <td>Villa Beach Front</td>
+  </tr>
+  </tbody>
+</table>
+<script src="datatables/js/jquery.dataTables.min.js"></script>
+<script src="datatables/js/dataTables.bootstrap4.min.js"></script>
+<script>
+  $(document).ready(function () {
+    $('#tableCustomer').dataTable({
+      "dom": 'lrtip',
+      "lengthChange": false,
+      "pageLength": 3
+    });
+  });
+</script>
+</body>
+</html>
