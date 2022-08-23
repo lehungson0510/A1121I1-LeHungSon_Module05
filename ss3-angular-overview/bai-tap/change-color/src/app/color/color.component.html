@@ -1,0 +1,14 @@
+<div class="text-center">
+  <h2>Chọn màu</h2>
+  <button type="button" class="btn btn-outline-primary" value="blue" (click)="changeColor($event.target)">Blue</button>
+  <button type="button" class="btn btn-outline-success" value="green" (click)="changeColor($event.target)">Green
+  </button>
+  <button type="button" class="btn btn-outline-danger" value="red" (click)="changeColor($event.target)">Red</button>
+  <button type="button" class="btn btn-outline-warning" value="yellow" (click)="changeColor($event.target)">Yellow
+  </button>
+  <button type="button" class="btn btn-outline-dark" value="black" (click)="changeColor($event.target)">Black</button>
+  <button type="button" class="btn btn-outline-light text-dark" value="white" (click)="changeColor($event.target)">
+    White
+  </button>
+</div>
+<p style="height: 660px" [style.background-color]="color">
