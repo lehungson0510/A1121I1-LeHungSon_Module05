@@ -1,0 +1,65 @@
+<body>
+<h2 class="text-info text-center">Sửa dịch vụ</h2>
+<form class="container">
+  <div class="form-group">
+    <label for="id">ID: <span style="color: red">*</span></label>
+    <input type="text" class="form-control" id="id" placeholder="Enter id">
+  </div>
+  <div class="form-group">
+    <label for="name">Name: <span style="color: red">*</span></label>
+    <input type="text" class="form-control" id="name" placeholder="Enter name">
+  </div>
+  <div class="form-group">
+    <label for="area">Area: <span style="color: red">*</span></label>
+    <input type="number" class="form-control" id="area" placeholder="Enter area">
+  </div>
+  <div class="form-group">
+    <label for="cost">Cost: <span style="color: red">*</span></label>
+    <input type="number" class="form-control" id="cost" placeholder="Enter cost">
+  </div>
+  <div class="form-group">
+    <label for="people">Max-people: <span style="color: red">*</span></label>
+    <input type="number" class="form-control" id="people" placeholder="Enter max people">
+  </div>
+  <div class="form-group">
+    <label for="rent-type">Rent-type: <span style="color: red">*</span></label>
+    <select class="custom-select" id="rent-type">
+      <option selected>Choose...</option>
+      <option value="1">Theo năm</option>
+      <option value="2">Theo tháng</option>
+      <option value="3">Theo ngày</option>
+      <option value="3">Theo giờ</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="service-type">Service-type: <span style="color: red">*</span></label>
+    <select class="custom-select" id="service-type">
+      <option selected>Choose...</option>
+      <option value="1">Villa</option>
+      <option value="2">House</option>
+      <option value="3">Room</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="standard">Standard-room: <span style="color: red">*</span></label>
+    <input type="text" class="form-control" id="standard" placeholder="Enter standard room">
+  </div>
+  <div class="form-group">
+    <label for="description">Description: <span style="color: red">*</span></label>
+    <input type="text" class="form-control" id="description" placeholder="Enter description">
+  </div>
+  <div class="form-group">
+    <label for="pool">Pool-area: <span style="color: red">*</span></label>
+    <input type="number" class="form-control" id="pool" placeholder="Enter pool area">
+  </div>
+  <div class="form-group">
+    <label for="floor">Floos: <span style="color: red">*</span></label>
+    <input type="number" class="form-control" id="floor" placeholder="Enter floors">
+  </div>
+  <div class="text-center">
+    <button type="submit" class="btn btn-outline-success">Edit</button>
+    <button type="submit" class="btn btn-outline-danger">Cancel</button>
+  </div>
+</form>
+</body>
