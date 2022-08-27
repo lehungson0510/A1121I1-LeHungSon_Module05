@@ -1,0 +1,147 @@
+
+<h2 class="text-info text-center">Danh sách khách hàng</h2>
+<table class="table table-hover" id="tableCustomer">
+  <thead>
+  <tr class="table-active">
+    <th>ID</th>
+    <th>Name</th>
+    <th>Type</th>
+    <th>Birthday</th>
+    <th>Gender</th>
+    <th>Id card</th>
+    <th>Phone</th>
+    <th>Email</th>
+    <th>Address</th>
+    <th>Edit</th>
+    <th>Delete</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <th>1</th>
+    <td>Lê Hùng Sơn</td>
+    <td>Diamond</td>
+    <td>05/10/20</td>
+    <td>Nam</td>
+    <td>05102000</td>
+    <td>00112233</td>
+    <td>a@gmail.com</td>
+    <td>Huế</td>
+    <td><button type="button" class="btn btn-info">Edit</button></td>
+    <td><button type="button"
+                onclick="showInfo('5','Lê Hùng Sơn1')"
+                class="btn btn-danger"
+                data-toggle="modal"
+                data-target="#exampleModal">
+      delete
+    </button></td>
+  </tr>
+  <tr>
+    <th>2</th>
+    <td>Lê Hùng Sơn</td>
+    <td>Diamond</td>
+    <td>05/10/20</td>
+    <td>Nam</td>
+    <td>05102000</td>
+    <td>00112233</td>
+    <td>a@gmail.com</td>
+    <td>Huế</td>
+    <td><button type="button" class="btn btn-info">Edit</button></td>
+    <td><button type="button"
+                onclick="showInfo('5','Lê Hùng Sơn2')"
+                class="btn btn-danger"
+                data-toggle="modal"
+                data-target="#exampleModal">
+      delete
+    </button></td>
+  </tr>
+  <tr>
+    <th>3</th>
+    <td>Lê Hùng Sơn</td>
+    <td>Diamond</td>
+    <td>05/10/20</td>
+    <td>Nam</td>
+    <td>05102000</td>
+    <td>00112233</td>
+    <td>a@gmail.com</td>
+    <td>Huế</td>
+    <td><button type="button" class="btn btn-info">Edit</button></td>
+    <td><button type="button"
+                onclick="showInfo('5','Lê Hùng Sơn3')"
+                class="btn btn-danger"
+                data-toggle="modal"
+                data-target="#exampleModal">
+      delete
+    </button></td>
+  </tr>
+  <tr>
+    <th>4</th>
+    <td>Lê Hùng Sơn</td>
+    <td>Diamond</td>
+    <td>05/10/20</td>
+    <td>Nam</td>
+    <td>05102000</td>
+    <td>00112233</td>
+    <td>a@gmail.com</td>
+    <td>Huế</td>
+    <td><button type="button" class="btn btn-info">Edit</button></td>
+    <td><button type="button"
+                onclick="showInfo('5','Lê Hùng Sơn4')"
+                class="btn btn-danger"
+                data-toggle="modal"
+                data-target="#exampleModal">
+      delete
+    </button></td>
+  </tr>
+  <tr>
+    <th>5</th>
+    <td>Lê Hùng Sơn</td>
+    <td>Diamond</td>
+    <td>05/10/20</td>
+    <td>Nam</td>
+    <td>05102000</td>
+    <td>00112233</td>
+    <td>a@gmail.com</td>
+    <td>Huế</td>
+    <td><button type="button" class="btn btn-info">Edit</button></td>
+    <td><button type="button"
+                onclick="showInfo('5','Lê Hùng Sơn5')"
+                class="btn btn-danger"
+                data-toggle="modal"
+                data-target="#exampleModal">
+      delete
+    </button></td>
+  </tr>
+  </tbody>
+</table>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <!--    **********Thêm thẻ form **************-->
+    <form action="customer">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title " id="exampleModalLabel">Cảnh báo!!!</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <!--         ***************************** thêm ***********************-->
+          <input hidden type="text" id="idCustomer" name="id">
+          <span>Bạn có muốn xóa khách hàng </span>
+          <span class="text-danger" id="nameCustomer"></span> không?
+          <!--       *************************************************************-->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Không</button>
+          <!--          *********************** Chuyển type button sang submit *********************-->
+          <button type="submit" name="action" value="delete" class="btn btn-primary">Có</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+

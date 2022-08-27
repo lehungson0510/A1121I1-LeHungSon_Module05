@@ -1,7 +1,7 @@
 export interface IStudent {
   id:number,
   name:string,
-  age: number
-  avt?:string
+  address: string,
+  avt?:string,
   mark:number
 }

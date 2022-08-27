@@ -1,0 +1,10 @@
+<h3>Student information</h3>
+<img [src]="student.avatar" alt="avatar">
+<p>Name: {{student.name}}</p>
+<p>Age: {{student.age}}</p>
+<p>Address: {{student.address}}</p>
+<p>Mark: {{student.mark}}</p>
+<hr>
+<br>
+<input type="number" [(ngModel)]="student.mark" #mark>
+<button class="btn btn-info mx-3" (click)="changeMark(mark.value)">Mark</button>
