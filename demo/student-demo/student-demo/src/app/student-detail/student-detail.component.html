@@ -1,9 +1,9 @@
-<h1>Student</h1>
+<h1>Student detail</h1>
 <p>Id sinh viên: {{student.id}}</p>
 <p>Name sinh viên: {{student.name}}</p>
 <p>Mark sinh viên: {{student.mark}}</p>
 <p>Address sinh viên: {{student.address}}</p>
-<p>Avatar sinh viên:</p> <img [src]="student.avt" alt="">
+<p>Avatar sinh viên: <img style="width: 100px; height: 100px" [src]="student.avt" alt=""></p>
 <label for="mark">Chấm điểm</label>
-<!--<input type="number" id="mark" (change)="changeMark($event.target)">-->
 <input type="number" id="mark" [(ngModel)]="student.mark">
+<!--<input type="number" id="mark" [(ngModel)]="student.mark">-->

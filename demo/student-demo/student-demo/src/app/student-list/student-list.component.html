@@ -13,7 +13,7 @@
   </thead>
   <tbody *ngFor="let student of students; let i = index;">
   <tr>
-    <td>{{i}}</td>
+    <td>{{i+1}}</td>
     <td>{{student.id}}</td>
     <td>{{student.name|titlecase}}</td>
     <td>{{student.address}}</td>
@@ -27,8 +27,16 @@
       </td>
     </ng-template>
     <td><img [src]="student.avt" alt="" height="150px" width="200px"></td>
-    <td class="btn btn-warning">Chi tiết</td>
+    <td class="btn btn-warning" (click)="temp = student" >Chi tiết</td>
     <td class="btn btn-danger">Xóa</td>
   </tr>
   </tbody>
 </table>
+
+<div class="container">
+  <app-student-detail [student]="temp"></app-student-detail>
+</div>
+
+<div class="container">
+  <app-student-create (submitStudent)="addStudent($event)"></app-student-create>
+</div>

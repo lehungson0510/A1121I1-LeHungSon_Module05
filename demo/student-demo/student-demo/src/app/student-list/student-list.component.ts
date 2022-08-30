@@ -10,6 +10,7 @@ import {StudentDao} from '../student-dao/StudentDao';
 export class StudentListComponent implements OnInit {
 
   students: IStudent[] = StudentDao.students;
+  temp: IStudent;
 
   constructor() {
   }
@@ -17,4 +18,7 @@ export class StudentListComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  addStudent(student: IStudent) {
+    this.students.push(student);
+  }
 }

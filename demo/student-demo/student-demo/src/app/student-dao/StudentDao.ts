@@ -36,4 +36,5 @@ export class StudentDao {
       mark: 5,
       name: 'Lê Hùng Sơn'
     }];
+
 }
