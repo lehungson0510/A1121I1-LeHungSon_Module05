@@ -36,7 +36,7 @@ node path_name.js
 	npm i -s bootstrap@4.6
 
 Thêm vào file src/styles.css: 
-	@import "~bootstrap/dist/css/bootstrap.css"
+	@import "~bootstrap/dist/css/bootstrap.css";
 
 ------- Tạo dự án angular -------------
 ng new tên_dự_án
