@@ -1,65 +1,63 @@
-<body>
-<h2 class="text-info text-center">Thêm mới dịch vụ</h2>
-<form class="container">
-  <div class="form-group">
-    <label for="id">ID: <span style="color: red">*</span></label>
-    <input type="text" class="form-control" id="id" placeholder="Enter id">
-  </div>
-  <div class="form-group">
-    <label for="name">Name: <span style="color: red">*</span></label>
-    <input type="text" class="form-control" id="name" placeholder="Enter name">
-  </div>
-  <div class="form-group">
-    <label for="area">Area: <span style="color: red">*</span></label>
-    <input type="number" class="form-control" id="area" placeholder="Enter area">
-  </div>
-  <div class="form-group">
-    <label for="cost">Cost: <span style="color: red">*</span></label>
-    <input type="number" class="form-control" id="cost" placeholder="Enter cost">
-  </div>
-  <div class="form-group">
-    <label for="people">Max-people: <span style="color: red">*</span></label>
-    <input type="number" class="form-control" id="people" placeholder="Enter max people">
-  </div>
-  <div class="form-group">
-    <label for="rent-type">Rent-type: <span style="color: red">*</span></label>
-    <select class="custom-select" id="rent-type">
-      <option selected>Choose...</option>
-      <option value="1">Theo năm</option>
-      <option value="2">Theo tháng</option>
-      <option value="3">Theo ngày</option>
-      <option value="3">Theo giờ</option>
-    </select>
-  </div>
+<form class="container mt-3">
+  <div class="d-flex justify-content-center align-content-center pt-3" style="background-color: #addccf">
+    <div class="w-100 mx-5">
+      <h2 class="text-center text-info">Create service</h2>
+      <div class="input-group  my-4">
+        <label class="input-group-text" for="id">Id: <span style="color: red">*</span></label>
+        <input type="text" class="form-control mr-4" id="id" placeholder="id">
 
-  <div class="form-group">
-    <label for="service-type">Service-type: <span style="color: red">*</span></label>
-    <select class="custom-select" id="service-type">
-      <option selected>Choose...</option>
-      <option value="1">Villa</option>
-      <option value="2">House</option>
-      <option value="3">Room</option>
-    </select>
-  </div>
-  <div class="form-group">
-    <label for="standard">Standard-room: <span style="color: red">*</span></label>
-    <input type="text" class="form-control" id="standard" placeholder="Enter standard room">
-  </div>
-  <div class="form-group">
-    <label for="description">Description: <span style="color: red">*</span></label>
-    <input type="text" class="form-control" id="description" placeholder="Enter description">
-  </div>
-  <div class="form-group">
-    <label for="pool">Pool-area: <span style="color: red">*</span></label>
-    <input type="number" class="form-control" id="pool" placeholder="Enter pool area">
-  </div>
-  <div class="form-group">
-    <label for="floor">Floos: <span style="color: red">*</span></label>
-    <input type="number" class="form-control" id="floor" placeholder="Enter floors">
-  </div>
-  <div class="text-center">
-    <button type="submit" class="btn btn-outline-success mr-1" style="width: 75px">Add</button>
-    <button type="submit" class="btn btn-outline-danger">Cancel</button>
+        <label class="input-group-text" for="name">Name: <span style="color: red">*</span></label>
+        <input type="text" class="form-control  mr-4" id="name" placeholder="name">
+
+        <label class="input-group-text" for="rent-type">Rent-type: <span style="color: red">*</span></label>
+        <select class="form-control" id="rent-type">
+          <option selected>Choose...</option>
+          <option value="1">Theo năm</option>
+          <option value="2">Theo tháng</option>
+          <option value="3">Theo ngày</option>
+          <option value="3">Theo giờ</option>
+        </select>
+      </div>
+
+      <div class="input-group mb-4">
+        <label class="input-group-text" for="idCard">Area: <span style="color: red">*</span></label>
+        <input type="text" class="form-control mr-4" id="idCard" placeholder="area">
+
+        <label class="input-group-text" for="phone">Cost: <span style="color: red">*</span></label>
+        <input type="text" class="form-control mr-4" id="phone" placeholder="cost">
+
+        <label class="input-group-text" for="service-type">Service-type: <span style="color: red">*</span></label>
+        <select class="form-control" id="service-type">
+          <option selected>Choose...</option>
+          <option value="1">Villa</option>
+          <option value="2">House</option>
+          <option value="3">Room</option>
+        </select>
+      </div>
+
+      <div class="input-group mb-4">
+        <label class="input-group-text" for="people">Max-people: <span style="color: red">*</span></label>
+        <input type="text" class="form-control mr-4" id="people" placeholder="max people">
+
+        <label class="input-group-text" for="room">Standard-room: <span style="color: red">*</span></label>
+        <input type="text" class="form-control mr-4" id="room" placeholder="standard">
+
+        <label class="input-group-text" for="pool">Pool-area: <span style="color: red">*</span></label>
+        <input type="text" class="form-control" id="pool" placeholder="pool area">
+      </div>
+
+      <div class="input-group  mb-4">
+        <label class="input-group-text" for="description">Description: <span style="color: red">*</span></label>
+        <input type="text" class="form-control mr-4" id="description" placeholder="description">
+
+        <label class="input-group-text" for="floor">Floors: <span style="color: red">*</span></label>
+        <input type="text" class="form-control" id="floor" placeholder="floos">
+      </div>
+
+      <div class="text-center mb-2">
+        <button type="submit" class="btn btn-outline-success mr-1" style="width: 75px">Add</button>
+        <button type="submit" class="btn btn-outline-danger">Cancel</button>
+      </div>
+    </div>
   </div>
 </form>
-</body>

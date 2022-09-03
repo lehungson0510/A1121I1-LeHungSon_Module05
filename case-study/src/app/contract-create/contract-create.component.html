@@ -1,0 +1,62 @@
+<form class="container mt-3">
+  <div class="d-flex justify-content-center align-content-center pt-3" style="background-color: #addccf">
+    <div class="w-100 mx-5">
+      <h2 class="text-center text-info">Create contract</h2>
+      <div class="input-group  my-4">
+        <label class="input-group-text" for="id">Id: <span style="color: red">*</span></label>
+        <input type="text" class="form-control mr-4" id="id" placeholder="id">
+
+        <label class="input-group-text" for="deposit">Deposit: <span style="color: red">*</span></label>
+        <input type="text" class="form-control mr-4" id="deposit" placeholder="deposit">
+
+        <label class="input-group-text" for="money">Total money: <span style="color: red">*</span></label>
+        <input type="text" class="form-control" id="money" placeholder="total money">
+      </div>
+
+      <div class="input-group  mb-4">
+        <label class="input-group-text" for="start">Start date: <span style="color: red">*</span></label>
+        <input type="date" class="form-control mr-4" id="start" placeholder="id">
+
+        <label class="input-group-text" for="end">End date: <span style="color: red">*</span></label>
+        <input type="date" class="form-control " id="end" placeholder="deposit">
+      </div>
+
+      <div class="input-group  mb-4">
+        <label class="input-group-text" for="customer">Customer: <span style="color: red">*</span></label>
+        <select class="form-control mr-4" id="customer">
+          <option selected>Choose...</option>
+          <option value="1">Nguyễn Văn A</option>
+          <option value="2">Nguyễn Văn B</option>
+          <option value="3">Nguyễn Văn C</option>
+          <option value="4">Nguyễn Văn D</option>
+          <option value="5">Nguyễn Văn E</option>
+        </select>
+
+        <label class="input-group-text" for="employee">Employee: <span style="color: red">*</span></label>
+        <select class="form-control mr-4" id="employee">
+          <option selected>Choose...</option>
+          <option value="1">Lê Hùng A</option>
+          <option value="2">Lê Hùng B</option>
+          <option value="3">Lê Hùng C</option>
+          <option value="4">Lê Hùng D</option>
+          <option value="5">Lê Hùng E</option>
+        </select>
+
+        <label class="input-group-text" for="service">Service: <span style="color: red">*</span></label>
+        <select class="form-control" id="service">
+          <option selected>Choose...</option>
+          <option value="1">Villa Beach Front</option>
+          <option value="2">House Princess 01</option>
+          <option value="3">Room Twin 01</option>
+          <option value="4">Villa No Beach Front</option>
+          <option value="5">House Princess 02</option>
+          <option value="6">Room Twin 02</option>
+        </select>
+      </div>
+      <div class="text-center mb-2">
+        <button type="submit" class="btn btn-outline-success mr-1" style="width: 75px">Add</button>
+        <button type="submit" class="btn btn-outline-danger">Cancel</button>
+      </div>
+    </div>
+  </div>
+</form>
