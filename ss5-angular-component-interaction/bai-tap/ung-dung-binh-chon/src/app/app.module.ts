@@ -8,7 +8,7 @@ import { RatingBarComponent } from './rating-bar/rating-bar.component';
 @NgModule({
   declarations: [
     AppComponent,
-    RatingBarComponent
+    RatingBarComponent,
   ],
   imports: [
     BrowserModule,
