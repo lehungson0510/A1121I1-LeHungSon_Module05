@@ -1,0 +1,189 @@
+<!--<*********************** Content ********************************&ndash;&gt;-->
+<div class="content">
+<!--  <div style="background-image: url(https://images.squarespace-cdn.com/content/v1/5aadf482aa49a1d810879b88/1626698419120-J7CH9BPMB2YI728SLFPN/1.jpg);-->
+<!--    background-position: center;-->
+<!--    background-repeat: no-repeat;-->
+<!--    background-size: cover;">-->
+<!--    <div style="height: 120px;"></div>-->
+<!--    <h2 class="m-0" style="font-size: 40px;-->
+<!--    color: #ffa901;-->
+<!--    text-align: center;-->
+<!--    font-family: 'Playfair Display', sans-serif;-->
+<!--    font-weight: 900;">FACILITIES</h2>-->
+<!--    <div style="height: 120px;"></div>-->
+<!--  </div>-->
+
+  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <div style="background-image: url(https://images.squarespace-cdn.com/content/v1/5aadf482aa49a1d810879b88/1626698419120-J7CH9BPMB2YI728SLFPN/1.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;">
+          <div style="height: 120px;"></div>
+          <h2 class="m-0" style="font-size: 40px;
+    color: #7DCE13;
+    /*#ffa901*/
+    text-align: center;
+    font-family: 'Playfair Display', sans-serif;
+    font-weight: 900;">FACILITIES</h2>
+          <div style="height: 120px;"></div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div style="background-image: url(https://wallpaperaccess.com/full/6688142.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;">
+          <div style="height: 120px;"></div>
+          <h2 class="m-0" style="font-size: 40px;
+    color: #7DCE13;
+    text-align: center;
+    font-family: 'Playfair Display', sans-serif;
+    font-weight: 900;">FACILITIES</h2>
+          <div style="height: 120px;"></div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div style="background-image: url(https://images8.alphacoders.com/542/542873.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;">
+          <div style="height: 120px;"></div>
+          <h2 class="m-0" style="font-size: 40px;
+    color: #7DCE13;
+    text-align: center;
+    font-family: 'Playfair Display', sans-serif;
+    font-weight: 900;">FACILITIES</h2>
+          <div style="height: 120px;"></div>
+        </div>
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+  <!--  <div style="display: flex; justify-content: center;">-->
+  <!--    <div class="mt-5">-->
+  <!--      <table id="tableService">-->
+  <!--        <thead hidden>-->
+  <!--        <tr hidden>-->
+  <!--          <th></th>-->
+  <!--          <th></th>-->
+  <!--          <th></th>-->
+  <!--        </tr>-->
+  <!--        </thead>-->
+  <!--        <tbody>-->
+  <!--        <tr>-->
+  <!--          <td *ngFor="let service of serviceList   " class="p-3">-->
+  <!--            <div class="container">-->
+  <!--              <div class="img-container">-->
+  <!--                <img-->
+  <!--                  src="{{service.image}}"-->
+  <!--                  alt="">-->
+  <!--              </div>-->
+
+  <!--              <ul class="social-media">-->
+  <!--                <li><a href="#" style="width: 75px" class="btn btn-warning btn-outline-dark">Edit</a></li>-->
+  <!--                <li><a href="#">-->
+  <!--                  <button type="button"-->
+  <!--                          onclick="showInfo('','')"-->
+  <!--                          class="btn btn-danger btn-outline-dark"-->
+  <!--                          data-toggle="modal"-->
+  <!--                          data-target="#exampleModal">-->
+  <!--                    Delete-->
+  <!--                  </button>-->
+  <!--                </a></li>-->
+  <!--              </ul>-->
+  <!--              <div class="user-info">-->
+  <!--                <h4>{{service.name}}</h4>-->
+  <!--                <span>{{service.area}}m<sup>2</sup></span>-->
+  <!--              </div>-->
+  <!--            </div>-->
+  <!--          </td>-->
+  <!--        </tr>-->
+  <!--        </tbody>-->
+  <!--      </table>-->
+  <!--    </div>-->
+  <!--  </div>-->
+  <!--</div>-->
+
+  <div style="display: flex; justify-content: center;">
+    <div class="mt-3 container-fluid row ">
+      <div *ngFor="let service of serviceList  "
+           class="col-md-4 my-3 d-flex justify-content-center align-content-center">
+        <div class="card-content">
+          <div class="img-container">
+            <img
+              src="{{service.image}}"
+              alt="">
+          </div>
+          <ul class="social-media">
+            <li><a href="#" style="width: 75px" class="btn btn-warning btn-outline-dark">Edit</a></li>
+            <li><a href="#">
+              <button type="button"
+                      onclick="showInfo('','')"
+                      class="btn btn-danger btn-outline-dark"
+                      data-toggle="modal"
+                      data-target="#exampleModal">
+                Delete
+              </button>
+            </a></li>
+          </ul>
+          <div class="user-info">
+            <h4>{{service.name}}</h4>
+            <span>{{service.area}}m<sup>2</sup></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--***************** Xóa có modal ***********************-->
+
+  <button type="button"
+          onclick="showInfo('ABC','ABC')"
+          class="btn btn-success text-light btn-outline-dark"
+          data-toggle="modal"
+          data-target="#exampleModal">
+    delete
+  </button>
+
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+       aria-hidden="true">
+    <div class="modal-dialog">
+      <!--    **********Thêm thẻ form **************-->
+      <form action="customer">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <!--         ***************************** thêm ***********************-->
+            <input hidden type="text" id="idCustomer" name="id">
+            <span>Bạn có muốn xóa dịch vụ </span>
+            <span class="text-danger" id="nameCustomer"></span> không?
+            <!--       *************************************************************-->
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Không</button>
+            <!--          *********************** Chuyển type button sang submit *********************-->
+            <button type="submit" name="action" value="delete" class="btn btn-primary">Có</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

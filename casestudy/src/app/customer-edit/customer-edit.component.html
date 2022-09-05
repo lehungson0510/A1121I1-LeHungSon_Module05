@@ -1,0 +1,56 @@
+<form class="container mt-3">
+  <div class="d-flex justify-content-center align-content-center pt-3" style="background-color: #addccf">
+    <div class="w-100 mx-5">
+      <h2 class="text-center text-info">Edit customer</h2>
+      <div class="input-group  my-4">
+        <label class="input-group-text" for="id">Id: <span style="color: red">*</span></label>
+        <input type="text" class="form-control mr-4" id="id" placeholder="id">
+
+        <label class="input-group-text" for="name">Name: <span style="color: red">*</span></label>
+        <input type="text" class="form-control" id="name" placeholder="name">
+      </div>
+
+      <div class="input-group mb-4">
+        <label class="input-group-text" for="idCard">Id card: <span style="color: red">*</span></label>
+        <input type="text" class="form-control mr-4" id="idCard" placeholder="id card">
+
+        <label class="input-group-text" for="phone">Phone: <span style="color: red">*</span></label>
+        <input type="text" class="form-control mr-4" id="phone" placeholder="phone">
+
+        <label class="input-group-text" for="start">Gender: <span style="color: red">*</span></label>
+        <div>
+          <input type="radio" id="male" name="gender" value="male">
+            <label for="male">Male</label>
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="female">Female</label>
+          <input class="ml-3" type="radio" id="others" name="gender" value="others">
+            <label for="others">Others</label>
+        </div>
+      </div>
+
+      <div class="input-group  mb-4">
+        <label class="input-group-text" for="email">Email: <span style="color: red">*</span></label>
+        <input type="number" class="form-control mr-4" id="email" placeholder="email">
+
+        <label class="input-group-text" for="type">Type: <span style="color: red">*</span></label>
+        <select class="form-control" id="type">
+          <option selected>Choose...</option>
+          <option value="1">Diamond</option>
+          <option value="2">Platinum</option>
+          <option value="3">Gold</option>
+          <option value="4">Silver</option>
+          <option value="5">Member</option>
+        </select>
+      </div>
+
+      <div class="input-group  mb-4">
+        <label class="input-group-text" for="address">Address: <span style="color: red">*</span></label>
+        <input type="number" class="form-control" id="address" placeholder="address">
+      </div>
+      <div class="text-center mb-2">
+        <button type="submit" class="btn btn-outline-success mr-1" style="width: 75px">Edit</button>
+        <button type="submit" class="btn btn-outline-danger">Cancel</button>
+      </div>
+    </div>
+  </div>
+</form>
