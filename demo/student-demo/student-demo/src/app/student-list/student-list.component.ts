@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {IStudent} from '../model/IStudent';
 import {StudentDao} from '../student-dao/StudentDao';
+import {StudentService} from '../service/student.service';
 
 @Component({
   selector: 'app-student-list',
@@ -8,17 +9,18 @@ import {StudentDao} from '../student-dao/StudentDao';
   styleUrls: ['./student-list.component.css']
 })
 export class StudentListComponent implements OnInit {
+  students: IStudent[] | undefined;
 
-  students: IStudent[] = StudentDao.students;
-  temp: IStudent;
+  // temp: IStudent;
 
-  constructor() {
+  constructor(private studentService: StudentService) {
   }
 
   ngOnInit(): void {
+    this.students = this.studentService.getAll();
   }
 
-  addStudent(student: IStudent) {
-    this.students.push(student);
-  }
+  // addStudent(student: IStudent) {
+  //   this.students.push(student);
+  // }
 }

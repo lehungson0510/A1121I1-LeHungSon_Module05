@@ -1,3 +1,5 @@
+<a routerLink="/create" class="btn btn-outline-primary btn-success m-3">Create</a>
+
 <table class="table table-striped">
   <thead>
   <tr>
@@ -13,12 +15,12 @@
   </thead>
   <tbody *ngFor="let student of students; let i = index;">
   <tr>
-    <td>{{i+1}}</td>
+    <td>{{i + 1}}</td>
     <td>{{student.id}}</td>
     <td>{{student.name|titlecase}}</td>
     <td>{{student.address}}</td>
     <td>{{student.mark}}</td>
-    <td *ngIf="student.mark >= 5; else elseBlock">
+    <td *ngIf="student.mark >= 5;else elseBlock">
       Pass
     </td>
     <ng-template #elseBlock>
@@ -27,16 +29,17 @@
       </td>
     </ng-template>
     <td><img [src]="student.avt" alt="" height="150px" width="200px"></td>
-    <td class="btn btn-warning" (click)="temp = student" >Chi tiết</td>
-    <td class="btn btn-danger">Xóa</td>
+    <!--    <td class="btn btn-warning" (click)="temp = student" >Chi tiết</td>-->
+    <td class="btn btn-warning" [routerLink]="['/detail',student.id]">Chi tiết</td>
+    <td class="btn btn-danger" [routerLink]="['/delete',student.id]">Xóa</td>
   </tr>
   </tbody>
 </table>
 
-<div class="container">
-  <app-student-detail [student]="temp"></app-student-detail>
-</div>
+<!--<div class="container">-->
+<!--  <app-student-detail [student]="temp"></app-student-detail>-->
+<!--</div>-->
 
-<div class="container">
-  <app-student-create (submitStudent)="addStudent($event)"></app-student-create>
-</div>
+<!--<div class="container">-->
+<!--  <app-student-create (submitStudent)="addStudent($event)"></app-student-create>-->
+<!--</div>-->

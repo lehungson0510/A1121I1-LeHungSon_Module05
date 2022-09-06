@@ -1,5 +1,5 @@
-<div class="container">
-  <h2 class="text-info text-center">Danh sách khách hàng</h2>
+<div class="container ">
+  <h2 class="text-info text-center my-4">Danh sách khách hàng</h2>
   <table class="table table-hover" id="tableCustomer">
     <thead>
     <tr class="table-active">
@@ -17,114 +17,32 @@
     </tr>
     </thead>
     <tbody>
-    <tr>
-      <th>1</th>
-      <td>Lê Hùng Sơn</td>
-      <td>Diamond</td>
-      <td>05/10/20</td>
-      <td>Nam</td>
-      <td>05102000</td>
-      <td>00112233</td>
-      <td>a@gmail.com</td>
-      <td>Huế</td>
+    <tr *ngFor="let customer of customerList |  slice:0:page*3">
+      <th>{{customer.id}}</th>
+      <td>{{customer.name}}</td>
+      <td [ngSwitch]="customer.typeId">
+        <span *ngSwitchCase="1">Diamond</span>
+        <span *ngSwitchCase="2">Platinum</span>
+        <span *ngSwitchCase="3">Gold</span>
+        <span *ngSwitchCase="4">Silver</span>
+        <span *ngSwitchCase="5">Member</span>
+      </td>
+      <td>{{customer.birthday}}</td>
+      <td *ngIf="customer.gender == 1">Nam</td>
+      <td *ngIf="customer.gender == 2">Nữ</td>
+      <td *ngIf="customer.gender == 3">Khác</td>
+      <td>{{customer.idCard}}</td>
+      <td>{{customer.phone}}</td>
+      <td>{{customer.email}}</td>
+      <td>{{customer.address}}</td>
       <td>
-        <button type="button" class="btn btn-info">Edit</button>
+        <a routerLink="/customer/edit">
+          <button type="button" class="btn btn-info">Edit</button>
+        </a>
       </td>
       <td>
         <button type="button"
-                onclick="showInfo('5','Lê Hùng Sơn1')"
-                class="btn btn-danger"
-                data-toggle="modal"
-                data-target="#exampleModal">
-          delete
-        </button>
-      </td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Lê Hùng Sơn</td>
-      <td>Diamond</td>
-      <td>05/10/20</td>
-      <td>Nam</td>
-      <td>05102000</td>
-      <td>00112233</td>
-      <td>a@gmail.com</td>
-      <td>Huế</td>
-      <td>
-        <button type="button" class="btn btn-info">Edit</button>
-      </td>
-      <td>
-        <button type="button"
-                onclick="showInfo('5','Lê Hùng Sơn2')"
-                class="btn btn-danger"
-                data-toggle="modal"
-                data-target="#exampleModal">
-          delete
-        </button>
-      </td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>Lê Hùng Sơn</td>
-      <td>Diamond</td>
-      <td>05/10/20</td>
-      <td>Nam</td>
-      <td>05102000</td>
-      <td>00112233</td>
-      <td>a@gmail.com</td>
-      <td>Huế</td>
-      <td>
-        <button type="button" class="btn btn-info">Edit</button>
-      </td>
-      <td>
-        <button type="button"
-                onclick="showInfo('5','Lê Hùng Sơn3')"
-                class="btn btn-danger"
-                data-toggle="modal"
-                data-target="#exampleModal">
-          delete
-        </button>
-      </td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>Lê Hùng Sơn</td>
-      <td>Diamond</td>
-      <td>05/10/20</td>
-      <td>Nam</td>
-      <td>05102000</td>
-      <td>00112233</td>
-      <td>a@gmail.com</td>
-      <td>Huế</td>
-      <td>
-        <button type="button" class="btn btn-info">Edit</button>
-      </td>
-      <td>
-        <button type="button"
-                onclick="showInfo('5','Lê Hùng Sơn4')"
-                class="btn btn-danger"
-                data-toggle="modal"
-                data-target="#exampleModal">
-          delete
-        </button>
-      </td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>Lê Hùng Sơn</td>
-      <td>Diamond</td>
-      <td>05/10/20</td>
-      <td>Nam</td>
-      <td>05102000</td>
-      <td>00112233</td>
-      <td>a@gmail.com</td>
-      <td>Huế</td>
-      <td>
-        <button type="button" class="btn btn-info">Edit</button>
-      </td>
-      <td>
-        <button type="button"
-                onclick="showInfo('5','Lê Hùng Sơn5')"
+                (click)='tempId = customer.id; tempName = customer.name'
                 class="btn btn-danger"
                 data-toggle="modal"
                 data-target="#exampleModal">
@@ -134,6 +52,9 @@
     </tr>
     </tbody>
   </table>
+  <div class="w-100 d-flex justify-content-center" *ngIf="page*3 < customerList.length">
+    <button class="btn btn-primary btn-outline-dark" (click)="page=page+1">Read more</button>
+  </div>
 
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -148,9 +69,9 @@
           </div>
           <div class="modal-body">
             <!--         ***************************** thêm ***********************-->
-            <input hidden type="text" id="idCustomer" name="id">
+            <input hidden type="text" id="{{tempId}}" name="id">
             <span>Bạn có muốn xóa khách hàng </span>
-            <span class="text-danger" id="nameCustomer"></span> không?
+            <span class="text-danger" id="nameCustomer">{{tempName}}</span> không?
             <!--       *************************************************************-->
           </div>
           <div class="modal-footer">

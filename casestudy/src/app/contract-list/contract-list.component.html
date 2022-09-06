@@ -1,8 +1,9 @@
 <body class="container">
-<h2 class="text-info text-center my-3">Danh sách hợp đồng</h2>
+<h2 class="text-info text-center my-4">Danh sách hợp đồng</h2>
 <table class="table table-hover" id="tableContract">
   <thead>
   <tr class="table-active">
+    <th>STT</th>
     <th>ID</th>
     <th>Start date</th>
     <th>End date</th>
@@ -10,62 +11,53 @@
     <th>Total money</th>
     <th>Customer</th>
     <th>Employee</th>
-    <th>Iservice</th>
+    <th>Service</th>
   </tr>
   </thead>
-  <tbody>
+  <tbody *ngFor="let contract of contractList | slice: 0:page*3; let index = index ">
   <!--  <tr class="table-danger"></tr>-->
   <tr>
-    <th>1</th>
-    <td>01/01/2000</td>
-    <td>01/01/2001</td>
-    <td>1000000</td>
-    <td>5000000</td>
-    <td>Nguyễn Văn A</td>
-    <td>Lê Hùng A</td>
-    <td>Villa Beach Front</td>
+    <th>{{index + 1}}</th>
+    <td>{{contract.id}}</td>
+    <td>{{contract.startDate | date:'dd/MM/yyyy'}} </td>
+    <td>{{contract.endDate | date:'dd/MM/yyyy'}}</td>
+    <td>{{contract.deposit | currency:'VND'}}</td>
+    <td>{{contract.totalMoney| currency:'VND'}}</td>
+    <!--    <td *ngFor="let customer of customerList">-->
+    <!--      <span *ngIf="contract.customerId == customer.id ">{{customer.name}}</span>-->
+    <!--    </td>-->
+    <!--    <td *ngFor="let employee of employeeList ">-->
+    <!--      <span *ngIf="contract.employeeId == employee.id">{{employee.name}}</span>-->
+    <!--    </td>-->
+    <!--    <td *ngFor="let service of serviceList ">-->
+    <!--      <span *ngIf="contract.serviceId == service.id">{{service.name}}</span>-->
+    <!--    </td>-->
+    <td [ngSwitch]="contract.customerId">
+      <span *ngSwitchCase="1">Nguyễn Thị Hào</span>
+      <span *ngSwitchCase="2">Nguyễn Tâm Đắc</span>
+      <span *ngSwitchCase="3">Phạm Xuân Diệu</span>
+      <span *ngSwitchCase="4">Trương Đình Nghệ</span>
+      <span *ngSwitchCase="5">Dương Văn Quang</span>
+    </td>
+    <td [ngSwitch]="contract.employeeId">
+      <span *ngSwitchCase="1">Nguyễn Văn An</span>
+      <span *ngSwitchCase="2">Lê Văn Bình</span>
+      <span *ngSwitchCase="3">Hồ Thị Yên</span>
+      <span *ngSwitchCase="4">Võ Công Toản</span>
+      <span *ngSwitchCase="5">Nguyễn Bình Phát</span>
+    </td>
+    <td [ngSwitch]="contract.serviceId">
+      <span *ngSwitchCase="1">Villa Beach Front</span>
+      <span *ngSwitchCase="2">House Princess 01</span>
+      <span *ngSwitchCase="3">Room Twin 01</span>
+      <span *ngSwitchCase="4">Villa No Beach Front</span>
+      <span *ngSwitchCase="5">House Princess 02</span>
+    </td>
   </tr>
   <!--  <tr class="table-success">-->
-  <tr>
-    <th>2</th>
-    <td>01/01/2000</td>
-    <td>01/01/2001</td>
-    <td>1000000</td>
-    <td>5000000</td>
-    <td>Nguyễn Văn A</td>
-    <td>Lê Hùng A</td>
-    <td>Villa Beach Front</td>
-  </tr>
-  <tr>
-    <th>3</th>
-    <td>01/01/2000</td>
-    <td>01/01/2001</td>
-    <td>1000000</td>
-    <td>5000000</td>
-    <td>Nguyễn Văn A</td>
-    <td>Lê Hùng A</td>
-    <td>Villa Beach Front</td>
-  </tr>
-  <tr>
-    <th>4</th>
-    <td>01/01/2000</td>
-    <td>01/01/2001</td>
-    <td>1000000</td>
-    <td>5000000</td>
-    <td>Nguyễn Văn A</td>
-    <td>Lê Hùng A</td>
-    <td>Villa Beach Front</td>
-  </tr>
-  <tr>
-    <th>5</th>
-    <td>01/01/2000</td>
-    <td>01/01/2001</td>
-    <td>1000000</td>
-    <td>5000000</td>
-    <td>Nguyễn Văn A</td>
-    <td>Lê Hùng A</td>
-    <td>Villa Beach Front</td>
-  </tr>
   </tbody>
 </table>
+<div class="w-100 d-flex justify-content-center" *ngIf="page*3 < contractList.length">
+  <button class="btn btn-primary btn-outline-dark" (click)="page=page+1">Read more</button>
+</div>
 

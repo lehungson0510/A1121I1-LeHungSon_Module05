@@ -47,3 +47,10 @@ ng s -o
 -------- Tạo mới 1 component -----------
 ng g c tên_component
 
+-------- Cài đặt thư viện cho việc tính toán datetime ---------
+npm i date-fns -s
+
+-------- Tạo service --------
+ng g s tên
+-------- tạo một interface mới trong thư mục model --------
+ng g i model/song

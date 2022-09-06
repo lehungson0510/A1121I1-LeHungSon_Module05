@@ -1,7 +1,7 @@
 import {IStudent} from '../model/IStudent';
 
 export class StudentDao {
-  static students: IStudent[] = [{
+   static students: IStudent[] = [{
     id: 1,
     address: 'Huế',
     avt: 'https://symbols.vn/wp-content/uploads/2021/12/Cap-nhat-cho-cac-ban-Hinh-dai-dien-avatar-nu-cute.jpg',
@@ -37,4 +37,7 @@ export class StudentDao {
       name: 'Lê Hùng Sơn'
     }];
 
+  static getAllStudent() {
+    return this.students;
+  }
 }
