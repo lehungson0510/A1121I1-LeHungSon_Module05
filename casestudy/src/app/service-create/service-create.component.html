@@ -1,62 +1,162 @@
-<form class="container mt-3">
+<form class="container mt-3" [formGroup]="serviceForm" (ngSubmit)="createService()">
   <div class="d-flex justify-content-center align-content-center pt-3" style="background-color: #addccf">
     <div class="w-100 mx-5">
-      <h2 class="text-center text-info">Create service</h2>
-      <div class="input-group  my-4">
-        <label class="input-group-text" for="id">Id: <span style="color: red">*</span></label>
-        <input type="text" class="form-control mr-4" id="id" placeholder="id">
+      <h2 class="text-center text-info mb-3">Create service</h2>
+      <div class="form-row">
+        <div class="form-group col-md-4">
+          <div class="input-group">
+            <label class="input-group-text" for="id">Id: <span style="color: red">*</span></label>
+            <input type="text" class="form-control" id="id" placeholder="id" formControlName="id">
+          </div>
+          <small class="text-danger mb-0 pb-0"
+                 *ngIf="serviceForm.get('id').invalid && (serviceForm.get('id').touched||serviceForm.get('id').dirty)">
+            Id invalid!!
+          </small>
+        </div>
 
-        <label class="input-group-text" for="name">Name: <span style="color: red">*</span></label>
-        <input type="text" class="form-control  mr-4" id="name" placeholder="name">
+        <div class="form-group col-md-4">
+          <div class="input-group">
+            <label class="input-group-text" for="name">Name: <span style="color: red">*</span></label>
+            <input type="text" class="form-control " id="name" placeholder="name" formControlName="name">
+          </div>
+          <small class="text-danger mb-0 pb-0"
+                 *ngIf="serviceForm.get('name').invalid && (serviceForm.get('name').touched||serviceForm.get('name').dirty)">
+            Name invalid!!
+          </small>
+        </div>
 
-        <label class="input-group-text" for="rent-type">Rent-type: <span style="color: red">*</span></label>
-        <select class="form-control" id="rent-type">
-          <option selected>Choose...</option>
-          <option value="1">Theo năm</option>
-          <option value="2">Theo tháng</option>
-          <option value="3">Theo ngày</option>
-          <option value="3">Theo giờ</option>
-        </select>
+        <div class="form-group col-md-4">
+          <div class="input-group">
+            <label class="input-group-text" for="rent-type">Rent-type: <span style="color: red">*</span></label>
+            <select class="form-control" id="rent-type" formControlName="rentTypeId">
+              <option selected>Choose...</option>
+              <option value="1">Theo năm</option>
+              <option value="2">Theo tháng</option>
+              <option value="3">Theo ngày</option>
+              <option value="3">Theo giờ</option>
+            </select>
+          </div>
+          <small class="text-danger mb-0 pb-0"
+                 *ngIf="serviceForm.get('rentTypeId').invalid && (serviceForm.get('rentTypeId').touched||serviceForm.get('rentTypeId').dirty)">
+            Rent Type invalid!!
+          </small>
+        </div>
       </div>
 
-      <div class="input-group mb-4">
-        <label class="input-group-text" for="idCard">Area: <span style="color: red">*</span></label>
-        <input type="text" class="form-control mr-4" id="idCard" placeholder="area">
+      <div class="form-row">
+        <div class="form-group col-md-4">
+          <div class="input-group">
+            <label class="input-group-text" for="idCard">Area: <span style="color: red">*</span></label>
+            <input type="text" class="form-control" id="idCard" placeholder="area" formControlName="area">
+          </div>
+          <small class="text-danger mb-0 pb-0"
+                 *ngIf="serviceForm.get('area').invalid && (serviceForm.get('area').touched||serviceForm.get('area').dirty)">
+            Area invalid!!
+          </small>
+        </div>
 
-        <label class="input-group-text" for="phone">Cost: <span style="color: red">*</span></label>
-        <input type="text" class="form-control mr-4" id="phone" placeholder="cost">
+        <div class="form-group col-md-4">
+          <div class="input-group">
+            <label class="input-group-text" for="phone">Cost: <span style="color: red">*</span></label>
+            <input type="text" class="form-control" id="phone" placeholder="cost" formControlName="cost">
+          </div>
+          <small class="text-danger mb-0 pb-0"
+                 *ngIf="serviceForm.get('cost').invalid && (serviceForm.get('cost').touched||serviceForm.get('cost').dirty)">
+            Cost invalid!!
+          </small>
+        </div>
 
-        <label class="input-group-text" for="service-type">Iservice-type: <span style="color: red">*</span></label>
-        <select class="form-control" id="service-type">
-          <option selected>Choose...</option>
-          <option value="1">Villa</option>
-          <option value="2">House</option>
-          <option value="3">Room</option>
-        </select>
+        <div class="form-group col-md-4">
+          <div class="input-group">
+            <label class="input-group-text" for="service-type">Service-type: <span style="color: red">*</span></label>
+            <select class="form-control" id="service-type" formControlName="serviceTypeId">
+              <option selected>Choose...</option>
+              <option value="1">Villa</option>
+              <option value="2">House</option>
+              <option value="3">Room</option>
+            </select>
+          </div>
+          <small class="text-danger mb-0 pb-0"
+                 *ngIf="serviceForm.get('serviceTypeId').invalid && (serviceForm.get('serviceTypeId').touched||serviceForm.get('serviceTypeId').dirty)">
+            Service type invalid!!
+          </small>
+        </div>
       </div>
 
-      <div class="input-group mb-4">
-        <label class="input-group-text" for="people">Max-people: <span style="color: red">*</span></label>
-        <input type="text" class="form-control mr-4" id="people" placeholder="max people">
+      <div class="form-row">
+        <div class="form-group col-md-4">
+          <div class="input-group">
+            <label class="input-group-text" for="people">Max-people: <span style="color: red">*</span></label>
+            <input type="text" class="form-control" id="people" placeholder="max people" formControlName="maxPeople">
+          </div>
+          <small class="text-danger mb-0 pb-0"
+                 *ngIf="serviceForm.get('maxPeople').invalid && (serviceForm.get('maxPeople').touched||serviceForm.get('maxPeople').dirty)">
+            Max people invalid!!
+          </small>
+        </div>
 
-        <label class="input-group-text" for="room">Standard-room: <span style="color: red">*</span></label>
-        <input type="text" class="form-control mr-4" id="room" placeholder="standard">
+        <div class="form-group col-md-4">
+          <div class="input-group">
+            <label class="input-group-text" for="room">Standard-room: <span style="color: red">*</span></label>
+            <input type="text" class="form-control" id="room" placeholder="standard" formControlName="standard">
+          </div>
+          <small class="text-danger mb-0 pb-0"
+                 *ngIf="serviceForm.get('standard').invalid && (serviceForm.get('standard').touched||serviceForm.get('standard').dirty)">
+            Standard room invalid!!
+          </small>
+        </div>
 
-        <label class="input-group-text" for="pool">Pool-area: <span style="color: red">*</span></label>
-        <input type="text" class="form-control" id="pool" placeholder="pool area">
+        <div class="form-group col-md-4">
+          <div class="input-group">
+            <label class="input-group-text" for="pool">Pool-area: <span style="color: red">*</span></label>
+            <input type="text" class="form-control" id="pool" placeholder="pool area" formControlName="poolArea">
+          </div>
+          <small class="text-danger mb-0 pb-0"
+                 *ngIf="serviceForm.get('poolArea').invalid && (serviceForm.get('poolArea').touched||serviceForm.get('poolArea').dirty)">
+            Pool area invalid!!
+          </small>
+        </div>
       </div>
 
-      <div class="input-group  mb-4">
-        <label class="input-group-text" for="description">Description: <span style="color: red">*</span></label>
-        <input type="text" class="form-control mr-4" id="description" placeholder="description">
+      <div class="form-row">
+        <div class="form-group col-md-4">
+          <div class="input-group">
+            <label class="input-group-text" for="description">Description: <span style="color: red">*</span></label>
+            <input type="text" class="form-control " id="description" placeholder="description"
+                   formControlName="description">
+          </div>
+          <small class="text-danger mb-0 pb-0"
+                 *ngIf="serviceForm.get('description').invalid && (serviceForm.get('description').touched||serviceForm.get('description').dirty)">
+            Description invalid!!
+          </small>
+        </div>
 
-        <label class="input-group-text" for="floor">Floors: <span style="color: red">*</span></label>
-        <input type="text" class="form-control" id="floor" placeholder="floos">
+        <div class="form-group col-md-4">
+          <div class="input-group">
+            <label class="input-group-text" for="floor">Floors: <span style="color: red">*</span></label>
+            <input type="text" class="form-control" id="floor" placeholder="floors" formControlName="floors">
+          </div>
+          <small class="text-danger mb-0 pb-0"
+                 *ngIf="serviceForm.get('floors').invalid && (serviceForm.get('floors').touched||serviceForm.get('floors').dirty)">
+            Floor invalid!!
+          </small>
+        </div>
+
+        <div class="form-group col-md-4">
+          <div class="input-group">
+            <label class="input-group-text" for="image">Image: <span style="color: red">*</span></label>
+            <input type="text" class="form-control" id="image" placeholder="image" formControlName="image">
+          </div>
+          <small class="text-danger mb-0 pb-0"
+                 *ngIf="serviceForm.get('image').invalid && (serviceForm.get('image').touched||serviceForm.get('image').dirty)">
+            Image invalid!!
+          </small>
+        </div>
       </div>
 
       <div class="text-center mb-2">
-        <button type="submit" class="btn btn-outline-success mr-1" style="width: 75px">Add</button>
-        <button type="submit" class="btn btn-outline-danger">Cancel</button>
+        <button type="submit" class="btn btn-outline-success mr-1" [disabled]="serviceForm.invalid" style="width: 75px">Add</button>
+        <button type="reset" class="btn btn-outline-danger">Cancel</button>
       </div>
     </div>
   </div>

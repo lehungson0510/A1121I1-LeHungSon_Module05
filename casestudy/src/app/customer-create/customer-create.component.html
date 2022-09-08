@@ -1,59 +1,133 @@
 <form class="container mt-3" [formGroup]="customerForm" (ngSubmit)="createCustomer()">
   <div class="d-flex justify-content-center align-content-center pt-3" style="background-color: #addccf">
     <div class="w-100 mx-5">
-      <h2 class="text-center text-info">Create customer</h2>
-      <div class="input-group  my-4">
-        <label class="input-group-text" for="id">Id: <span style="color: red">*</span></label>
-        <input type="text" class="form-control mr-4" id="id" placeholder="id" formControlName="id">
+      <h2 class="text-center text-info mb-3">Create customer</h2>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <div class="input-group">
+            <label class="input-group-text" for="id">Id: <span style="color: red">*</span></label>
+            <input type="text" class="form-control " id="id" placeholder="id" formControlName="id">
+          </div>
+          <small class="text-danger mb-0 pb-0"
+                 *ngIf="customerForm.get('id').invalid && (customerForm.get('id').touched||customerForm.get('id').dirty)">
+            Id invalid!!
+          </small>
+        </div>
 
-        <label class="input-group-text" for="name">Name: <span style="color: red">*</span></label>
-        <input type="text" class="form-control" id="name" placeholder="name" formControlName="name">
-      </div>
-
-      <div class="input-group mb-4">
-        <label class="input-group-text" for="idCard">Id card: <span style="color: red">*</span></label>
-        <input type="text" class="form-control mr-4" id="idCard" placeholder="id card" formControlName="idCard">
-
-        <label class="input-group-text" for="phone">Phone: <span style="color: red">*</span></label>
-        <input type="text" class="form-control" id="phone" placeholder="phone" formControlName="phone">
-      </div>
-
-      <div class="input-group  my-4">
-        <label class="input-group-text" for="birthday">Birthday: <span style="color: red">*</span></label>
-        <input type="date" class="form-control mr-4" id="birthday" placeholder="id" formControlName="birthday">
-
-        <label class="input-group-text" for="male">Gender: <span style="color: red">*</span></label>
-        <div>
-          <input type="radio" id="male" name="gender" value="1" formControlName="gender">
-            <label for="male">Male</label>
-            <input type="radio" id="female" name="gender" value="2" formControlName="gender">
-            <label for="female">Female</label>
-          <input class="ml-3" type="radio" id="others" name="gender" value="3" formControlName="gender">
-            <label for="others">Others</label>
+        <div class="form-group col-md-6">
+          <div class="input-group">
+            <label class="input-group-text" for="name">Name: <span style="color: red">*</span></label>
+            <input type="text" class="form-control" id="name" placeholder="name" formControlName="name">
+          </div>
+          <small class="text-danger mb-0 pb-0"
+                 *ngIf="customerForm.get('name').invalid && (customerForm.get('name').touched||customerForm.get('name').dirty)">
+            Name invalid!!
+          </small>
         </div>
       </div>
 
-      <div class="input-group  mb-4">
-        <label class="input-group-text" for="email">Email: <span style="color: red">*</span></label>
-        <input type="text" class="form-control mr-4" id="email" placeholder="email" formControlName="email">
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <div class="input-group">
+            <label class="input-group-text" for="idCard">Id card: <span style="color: red">*</span></label>
+            <input type="text" class="form-control" id="idCard" placeholder="id card" formControlName="idCard">
+          </div>
+          <small class="text-danger mb-0 pb-0"
+                 *ngIf="customerForm.get('idCard').invalid && (customerForm.get('idCard').touched||customerForm.get('idCard').dirty)">
+            Id card invalid!!
+          </small>
+        </div>
 
-        <label class="input-group-text" for="type">Type: <span style="color: red">*</span></label>
-        <select class="form-control" id="type" formControlName="typeId">
-          <option selected>Choose...</option>
-          <option value="1">Diamond</option>
-          <option value="2">Platinum</option>
-          <option value="3">Gold</option>
-          <option value="4">Silver</option>
-          <option value="5">Member</option>
-        </select>
+        <div class="form-group col-md-6">
+          <div class="input-group">
+            <label class="input-group-text" for="phone">Phone: <span style="color: red">*</span></label>
+            <input type="text" class="form-control" id="phone" placeholder="phone" formControlName="phone">
+          </div>
+          <small class="text-danger mb-0 pb-0"
+                 *ngIf="customerForm.get('phone').invalid && (customerForm.get('phone').touched||customerForm.get('phone').dirty)">
+            Phone invalid!!
+          </small>
+        </div>
       </div>
 
-      <div class="input-group  mb-4">
-        <label class="input-group-text" for="address">Address: <span style="color: red">*</span></label>
-        <input type="number" class="form-control" id="address" placeholder="address" formControlName="address">
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <div class="input-group">
+            <label class="input-group-text" for="birthday">Birthday: <span style="color: red">*</span></label>
+            <input type="date" class="form-control " id="birthday" placeholder="id" formControlName="birthday">
+          </div>
+          <small class="text-danger mb-0 pb-0"
+                 *ngIf="customerForm.get('birthday').invalid && (customerForm.get('birthday').touched||customerForm.get('birthday').dirty)">
+            Birthday invalid!!
+          </small>
+        </div>
+
+        <div class="form-group col-md-6">
+          <div class="input-group">
+            <label class="input-group-text" for="male">Gender: <span style="color: red">*</span></label>
+            <div class=" d-flex justify-content-center align-items-center">
+              <input type="radio" id="male" name="gender" value="1" formControlName="gender">
+                <label for="male">Male</label>
+                <input type="radio" id="female" name="gender" value="2" formControlName="gender">
+                <label for="female">Female</label>
+              <input class="ml-2" type="radio" id="others" name="gender" value="3" formControlName="gender">
+                <label for="others">Others</label>
+            </div>
+            <small class="text-danger mb-0 pb-0"
+                   *ngIf="customerForm.get('gender').invalid && (customerForm.get('gender').touched||customerForm.get('gender').dirty)">
+              Gender invalid!!
+            </small>
+          </div>
+        </div>
       </div>
-      <div class="text-center mb-2">
-        <button type="submit" class="btn btn-outline-success mr-1" style="width: 75px">Add</button>
+
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <div class="input-group">
+            <label class="input-group-text" for="email">Email: <span style="color: red">*</span></label>
+            <input type="text" class="form-control " id="email" placeholder="email" formControlName="email">
+          </div>
+          <small class="text-danger mb-0 pb-0"
+                 *ngIf="customerForm.get('email').invalid && (customerForm.get('email').touched||customerForm.get('email').dirty)">
+            Email invalid!!
+          </small>
+        </div>
+
+        <div class="form-group col-md-6">
+          <div class="input-group">
+            <label class="input-group-text" for="type">Type: <span style="color: red">*</span></label>
+            <select class="form-control" id="type" formControlName="typeId">
+              <option selected>Choose...</option>
+              <option value="1">Diamond</option>
+              <option value="2">Platinum</option>
+              <option value="3">Gold</option>
+              <option value="4">Silver</option>
+              <option value="5">Member</option>
+            </select>
+          </div>
+          <small class="text-danger mb-0 pb-0"
+                 *ngIf="customerForm.get('typeId').invalid && (customerForm.get('typeId').touched||customerForm.get('typeId').dirty)">
+            Type invalid!!
+          </small>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group col-md-12">
+          <div class="input-group">
+            <label class="input-group-text" for="address">Address: <span style="color: red">*</span></label>
+            <input type="text" class="form-control" id="address" placeholder="address" formControlName="address">
+          </div>
+          <small class="text-danger mb-0 pb-0"
+                 *ngIf="customerForm.get('address').invalid && (customerForm.get('address').touched||customerForm.get('address').dirty)">
+            Address invalid!!
+          </small>
+        </div>
+      </div>
+      <div class="text-center my-2">
+        <button type="submit" class="btn btn-outline-success mr-1" [disabled]="customerForm.invalid"
+                style="width: 75px">Add
+        </button>
         <button type="reset" class="btn btn-outline-danger">Cancel</button>
       </div>
     </div>

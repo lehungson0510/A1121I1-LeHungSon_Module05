@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {FormGroup} from "@angular/forms";
 
 @Component({
   selector: 'app-service-edit',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./service-edit.component.css']
 })
 export class ServiceEditComponent implements OnInit {
+  serviceForm: FormGroup;
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  createService() {
+
+  }
 }

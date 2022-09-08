@@ -54,3 +54,12 @@ npm i date-fns -s
 ng g s tên
 -------- tạo một interface mới trong thư mục model --------
 ng g i model/song
+
+-------- Import thư viện phân trang -----------
+npm i ngx-pagination@5.1.1
+
+-------- Cài đặt json server
+ npm install -g json-server
+
+-------- Xem đường dẫn -------------
+json-server --watch data.json

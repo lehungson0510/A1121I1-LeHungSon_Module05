@@ -1,0 +1,39 @@
+{
+  "todo": [
+    {
+      "id": 1,
+      "content": "hi",
+      "complete": true
+    },
+    {
+      "id": 2,
+      "content": "hello",
+      "complete": false
+    },
+    {
+      "id": 3,
+      "content": "hi",
+      "complete": "true"
+    },
+    {
+      "id": 4,
+      "content": "hello",
+      "complete": false
+    },
+    {
+      "id": 5,
+      "content": "hi",
+      "complete": true
+    },
+    {
+      "id": 6,
+      "content": "hello",
+      "complete": false
+    },
+    {
+      "content": "123",
+      "complete": true,
+      "id": 7
+    }
+  ]
+}
