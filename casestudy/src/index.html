@@ -15,9 +15,6 @@
           integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
           crossorigin="anonymous"></script>
 
-  <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
-  <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
-  <script src="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css"></script>
 </head>
 <body>
 <app-root></app-root>
@@ -37,38 +34,18 @@
 
   setInterval(localTime, 1000);
 </script>
-
-<script>
-  $(document).ready(function () {
-    $('#tableService').DataTable({
-        "dom": 'lrtip',
-        "lengthChange": false,
-        "pageLength": 2
-      }
-    );
-  });
-</script>
-
+<script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css"></script>
 <!--<script>-->
 <!--  $(document).ready(function () {-->
-<!--    $('#tableCustomer').DataTable({-->
+<!--    $('#tableService').DataTable({-->
 <!--        "dom": 'lrtip',-->
 <!--        "lengthChange": false,-->
-<!--        "pageLength": 2,-->
+<!--        "pageLength": 2-->
 <!--      }-->
 <!--    );-->
 <!--  });-->
 <!--</script>-->
-
-<script>
-  $(document).ready(function () {
-    $('#tableContract').DataTable({
-        "dom": 'lrtip',
-        "lengthChange": false,
-        "pageLength": 2
-      }
-    );
-  });
-</script>
 </body>
 </html>

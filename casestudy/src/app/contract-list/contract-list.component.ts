@@ -7,6 +7,7 @@ import {ICustomer} from "../model/ICustomer";
 import {CustomerDao} from "../Dao/CustomerDao";
 import {IService} from "../model/IService";
 import {ServiceDao} from "../Dao/ServiceDao";
+import {ContractService} from "../service/contract.service";
 
 @Component({
   selector: 'app-contract-list',
@@ -14,16 +15,17 @@ import {ServiceDao} from "../Dao/ServiceDao";
   styleUrls: ['./contract-list.component.css']
 })
 export class ContractListComponent implements OnInit {
-  contractList: IContract[] = ContractDao.contractList;
-  employeeList: IEmployee[]= EmployeeDao.employeeList;
-  customerList: ICustomer[]= CustomerDao.customerList;
-  serviceList: IService[]= ServiceDao.serviceList;
+  contractList: IContract[];
+  employeeList: IEmployee[] = EmployeeDao.employeeList;
+  customerList: ICustomer[] = CustomerDao.customerList;
+  serviceList: IService[] = ServiceDao.serviceList;
   page: number = 1;
 
-  constructor() {
+  constructor(private contractService: ContractService) {
   }
 
   ngOnInit(): void {
+    this.contractList = this.contractService.getAllContract();
   }
 
 }

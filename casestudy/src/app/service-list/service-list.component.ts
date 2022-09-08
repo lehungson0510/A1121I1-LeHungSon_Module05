@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {IService} from "../model/IService";
-import {ServiceDao} from "../Dao/ServiceDao";
+import {ServiceService} from "../service/service.service";
 
 @Component({
   selector: 'app-service-list',
@@ -8,18 +8,15 @@ import {ServiceDao} from "../Dao/ServiceDao";
   styleUrls: ['./service-list.component.css']
 })
 export class ServiceListComponent implements OnInit {
-  page: number =1;
+  page: number = 1;
   tempId: number;
   tempName: string;
-  serviceList: IService[] = ServiceDao.serviceList;
+  serviceList: IService[];
 
-  constructor() {
+  constructor(private serviceService: ServiceService) {
   }
 
   ngOnInit(): void {
-  }
-
-  delete(id: number, name: string) {
-
+    this.serviceList = this.serviceService.getAllService();
   }
 }

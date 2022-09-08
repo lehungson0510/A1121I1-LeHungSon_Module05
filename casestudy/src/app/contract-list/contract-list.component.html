@@ -14,24 +14,16 @@
     <th>Service</th>
   </tr>
   </thead>
-  <tbody *ngFor="let contract of contractList | slice: 0:page*3; let index = index ">
+  <tbody *ngFor="let contract of contractList | paginate:{itemsPerPage: 2, currentPage: page}; index as i ">
   <!--  <tr class="table-danger"></tr>-->
   <tr>
-    <th>{{index + 1}}</th>
+    <th>{{i + 1}}</th>
     <td>{{contract.id}}</td>
     <td>{{contract.startDate | date:'dd/MM/yyyy'}} </td>
     <td>{{contract.endDate | date:'dd/MM/yyyy'}}</td>
     <td>{{contract.deposit | currency:'VND'}}</td>
     <td>{{contract.totalMoney| currency:'VND'}}</td>
-    <!--    <td *ngFor="let customer of customerList">-->
-    <!--      <span *ngIf="contract.customerId == customer.id ">{{customer.name}}</span>-->
-    <!--    </td>-->
-    <!--    <td *ngFor="let employee of employeeList ">-->
-    <!--      <span *ngIf="contract.employeeId == employee.id">{{employee.name}}</span>-->
-    <!--    </td>-->
-    <!--    <td *ngFor="let service of serviceList ">-->
-    <!--      <span *ngIf="contract.serviceId == service.id">{{service.name}}</span>-->
-    <!--    </td>-->
+
     <td [ngSwitch]="contract.customerId">
       <span *ngSwitchCase="1">Nguyễn Thị Hào</span>
       <span *ngSwitchCase="2">Nguyễn Tâm Đắc</span>
@@ -57,7 +49,7 @@
   <!--  <tr class="table-success">-->
   </tbody>
 </table>
-<div class="w-100 d-flex justify-content-center" *ngIf="page*3 < contractList.length">
-  <button class="btn btn-primary btn-outline-dark" (click)="page=page+1">Read more</button>
+<div class="d-flex justify-content-end">
+  <pagination-controls (pageChange)="page = $event"></pagination-controls>
 </div>
 
