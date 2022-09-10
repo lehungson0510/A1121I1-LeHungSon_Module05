@@ -1,0 +1,102 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "IPhone 13",
+      "price": 24000000,
+      "description": "New",
+      "category": {
+        "id": 1,
+        "name": "Iphone"
+      }
+    },
+    {
+      "id": 2,
+      "name": "IPhone 11",
+      "price": 1560000,
+      "description": "Like new",
+      "category": {
+        "id": 2,
+        "name": "Xiaomi"
+      }
+    },
+    {
+      "id": 3,
+      "name": "IPhone X",
+      "price": 968000,
+      "description": "99%",
+      "category": {
+        "id": 4,
+        "name": "Sony"
+      }
+    },
+    {
+      "id": 4,
+      "name": " IPhone 8",
+      "price": 7540000,
+      "description": "98%",
+      "category": {
+        "id": 4,
+        "name": "Sony"
+      }
+    },
+    {
+      "id": 5,
+      "name": "IPhone 11 Pro",
+      "price": 1895000,
+      "description": " Like new",
+      "category": {
+        "id": 1,
+        "name": "Iphone"
+      }
+    },
+    {
+      "id": 6,
+      "name": "Oppo Reno8 Z 5G",
+      "price": 10000000,
+      "description": "Brand new",
+      "category": {
+        "id": 3,
+        "name": "Oppo"
+      }
+    },
+    {
+      "id": 7,
+      "name": "Iphone 13 Pro Max",
+      "price": 30000000,
+      "description": "Brand new",
+      "category": {
+        "id": 1,
+        "name": "Iphone"
+      }
+    },
+    {
+      "id": 8,
+      "name": "Oppo A83",
+      "price": 5000000,
+      "description": "Old",
+      "category": {
+        "id": 3,
+        "name": "Oppo"
+      }
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Iphone"
+    },
+    {
+      "id": 2,
+      "name": "Xiaomi"
+    },
+    {
+      "id": 3,
+      "name": "Oppo"
+    },
+    {
+      "id": 4,
+      "name": "Sony"
+    }
+  ]
+}

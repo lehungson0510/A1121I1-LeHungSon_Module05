@@ -3,18 +3,18 @@
     <div class="w-100 mx-5">
       <h2 class="text-center text-info mb-3">Create service</h2>
       <div class="form-row">
-        <div class="form-group col-md-4">
-          <div class="input-group">
-            <label class="input-group-text" for="id">Id: <span style="color: red">*</span></label>
-            <input type="text" class="form-control" id="id" placeholder="id" formControlName="id">
-          </div>
-          <small class="text-danger mb-0 pb-0"
-                 *ngIf="serviceForm.get('id').invalid && (serviceForm.get('id').touched||serviceForm.get('id').dirty)">
-            Id invalid!!
-          </small>
-        </div>
+<!--        <div class="form-group col-md-4">-->
+<!--          <div class="input-group">-->
+<!--            <label class="input-group-text" for="id">Id: <span style="color: red">*</span></label>-->
+<!--            <input type="text" class="form-control" id="id" placeholder="id" formControlName="id">-->
+<!--          </div>-->
+<!--          <small class="text-danger mb-0 pb-0"-->
+<!--                 *ngIf="serviceForm.get('id').invalid && (serviceForm.get('id').touched||serviceForm.get('id').dirty)">-->
+<!--            Id invalid!!-->
+<!--          </small>-->
+<!--        </div>-->
 
-        <div class="form-group col-md-4">
+        <div class="form-group col-md-8">
           <div class="input-group">
             <label class="input-group-text" for="name">Name: <span style="color: red">*</span></label>
             <input type="text" class="form-control " id="name" placeholder="name" formControlName="name">
@@ -29,7 +29,7 @@
           <div class="input-group">
             <label class="input-group-text" for="rent-type">Rent-type: <span style="color: red">*</span></label>
             <select class="form-control" id="rent-type" formControlName="rentTypeId">
-              <option selected>Choose...</option>
+              <option selected value="" disabled>Choose...</option>
               <option value="1">Theo năm</option>
               <option value="2">Theo tháng</option>
               <option value="3">Theo ngày</option>
@@ -70,7 +70,7 @@
           <div class="input-group">
             <label class="input-group-text" for="service-type">Service-type: <span style="color: red">*</span></label>
             <select class="form-control" id="service-type" formControlName="serviceTypeId">
-              <option selected>Choose...</option>
+              <option selected value="" disabled>Choose...</option>
               <option value="1">Villa</option>
               <option value="2">House</option>
               <option value="3">Room</option>
@@ -155,7 +155,7 @@
       </div>
 
       <div class="text-center mb-2">
-        <button type="submit" class="btn btn-outline-success mr-1" [disabled]="serviceForm.invalid" style="width: 75px">Add</button>
+        <button type="submit" class="btn btn-outline-success mr-1" [disabled]="!serviceForm.valid" style="width: 75px">Add</button>
         <button type="reset" class="btn btn-outline-danger">Cancel</button>
       </div>
     </div>

@@ -13,7 +13,7 @@ import {ContractCreateComponent} from "./contract-create/contract-create.compone
 const routes: Routes = [
   {path:'', component: ServiceListComponent},
   {path:'service/create', component: ServiceCreateComponent},
-  {path:'service/edit', component: ServiceEditComponent},
+  {path:'service/edit/:id', component: ServiceEditComponent},
   {path:'customer/list', component: CustomerListComponent},
   {path:'customer/create',component: CustomerCreateComponent},
   {path:'customer/edit', component: CustomerEditComponent},

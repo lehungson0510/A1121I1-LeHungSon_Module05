@@ -4,7 +4,7 @@ import {FormControl} from '@angular/forms';
 import {TodoService} from '../service/todo.service';
 
 // tslint:disable-next-line:variable-name
-let _id = 1;
+const _id = 1;
 
 @Component({
   selector: 'app-todo',
@@ -19,8 +19,7 @@ export class TodoComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.todoService.getAll().subscribe(
-      (data) => this.todos = data);
+    this.getAllTodo();
   }
 
   toggleTodo(i: number) {
@@ -46,6 +45,11 @@ export class TodoComponent implements OnInit {
       );
       this.content.reset();
     }
+  }
+
+  getAllTodo() {
+    this.todoService.getAll().subscribe(
+      (data) => this.todos = data);
   }
 
   delete(todo: Todo) {

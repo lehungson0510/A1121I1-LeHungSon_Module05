@@ -1,4 +1,4 @@
-<form class="container mt-3" [formGroup]="serviceForm" (ngSubmit)="createService()">
+<form class="container mt-3" [formGroup]="serviceForm" (ngSubmit)="edit(service.id)">
   <div class="d-flex justify-content-center align-content-center pt-3" style="background-color: #addccf">
     <div class="w-100 mx-5">
       <h2 class="text-center text-info mb-3">Update service</h2>
@@ -155,7 +155,7 @@
       </div>
 
       <div class="text-center mb-2">
-        <button type="submit" class="btn btn-outline-success mr-1" [disabled]="serviceForm.invalid" style="width: 75px">Add</button>
+        <button type="submit" class="btn btn-outline-success mr-1" [disabled]="serviceForm.invalid" style="width: 75px">Edit</button>
         <button type="reset" class="btn btn-outline-danger">Cancel</button>
       </div>
     </div>

@@ -15,6 +15,7 @@ import {ServiceCreateComponent} from './service-create/service-create.component'
 import {ServiceEditComponent} from './service-edit/service-edit.component';
 import {ServiceListComponent} from './service-list/service-list.component';
 import {NgxPaginationModule} from "ngx-pagination";
+import {HttpClient, HttpClientModule} from "@angular/common/http";
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import {NgxPaginationModule} from "ngx-pagination";
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
