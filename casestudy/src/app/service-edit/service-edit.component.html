@@ -1,9 +1,9 @@
-<form class="container mt-3" [formGroup]="serviceForm" (ngSubmit)="edit(service.id)">
+<form class="container mt-3" [formGroup]="serviceForm" *ngIf="serviceForm" (ngSubmit)="edit(service.id)">
   <div class="d-flex justify-content-center align-content-center pt-3" style="background-color: #addccf">
     <div class="w-100 mx-5">
       <h2 class="text-center text-info mb-3">Update service</h2>
       <div class="form-row">
-        <div class="form-group col-md-4">
+        <div class="form-group col-md-4" hidden>
           <div class="input-group">
             <label class="input-group-text" for="id">Id: <span style="color: red">*</span></label>
             <input type="text" class="form-control" id="id" placeholder="id" formControlName="id">
@@ -14,7 +14,7 @@
           </small>
         </div>
 
-        <div class="form-group col-md-4">
+        <div class="form-group col-md-8">
           <div class="input-group">
             <label class="input-group-text" for="name">Name: <span style="color: red">*</span></label>
             <input type="text" class="form-control " id="name" placeholder="name" formControlName="name">
@@ -47,7 +47,7 @@
         <div class="form-group col-md-4">
           <div class="input-group">
             <label class="input-group-text" for="idCard">Area: <span style="color: red">*</span></label>
-            <input type="text" class="form-control" id="idCard" placeholder="area" formControlName="area">
+            <input type="number" class="form-control" id="idCard" placeholder="area" formControlName="area">
           </div>
           <small class="text-danger mb-0 pb-0"
                  *ngIf="serviceForm.get('area').invalid && (serviceForm.get('area').touched||serviceForm.get('area').dirty)">
@@ -58,7 +58,7 @@
         <div class="form-group col-md-4">
           <div class="input-group">
             <label class="input-group-text" for="phone">Cost: <span style="color: red">*</span></label>
-            <input type="text" class="form-control" id="phone" placeholder="cost" formControlName="cost">
+            <input type="number" class="form-control" id="phone" placeholder="cost" formControlName="cost">
           </div>
           <small class="text-danger mb-0 pb-0"
                  *ngIf="serviceForm.get('cost').invalid && (serviceForm.get('cost').touched||serviceForm.get('cost').dirty)">
@@ -87,7 +87,7 @@
         <div class="form-group col-md-4">
           <div class="input-group">
             <label class="input-group-text" for="people">Max-people: <span style="color: red">*</span></label>
-            <input type="text" class="form-control" id="people" placeholder="max people" formControlName="maxPeople">
+            <input type="number" class="form-control" id="people" placeholder="max people" formControlName="maxPeople">
           </div>
           <small class="text-danger mb-0 pb-0"
                  *ngIf="serviceForm.get('maxPeople').invalid && (serviceForm.get('maxPeople').touched||serviceForm.get('maxPeople').dirty)">
@@ -109,7 +109,7 @@
         <div class="form-group col-md-4">
           <div class="input-group">
             <label class="input-group-text" for="pool">Pool-area: <span style="color: red">*</span></label>
-            <input type="text" class="form-control" id="pool" placeholder="pool area" formControlName="poolArea">
+            <input type="number" class="form-control" id="pool" placeholder="pool area" formControlName="poolArea">
           </div>
           <small class="text-danger mb-0 pb-0"
                  *ngIf="serviceForm.get('poolArea').invalid && (serviceForm.get('poolArea').touched||serviceForm.get('poolArea').dirty)">
@@ -134,7 +134,7 @@
         <div class="form-group col-md-4">
           <div class="input-group">
             <label class="input-group-text" for="floor">Floors: <span style="color: red">*</span></label>
-            <input type="text" class="form-control" id="floor" placeholder="floors" formControlName="floors">
+            <input type="number" class="form-control" id="floor" placeholder="floors" formControlName="floors">
           </div>
           <small class="text-danger mb-0 pb-0"
                  *ngIf="serviceForm.get('floors').invalid && (serviceForm.get('floors').touched||serviceForm.get('floors').dirty)">

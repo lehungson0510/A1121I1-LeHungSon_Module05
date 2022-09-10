@@ -18,8 +18,6 @@ export class ServiceListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // this.serviceList = this.serviceService.getAllService();
-
     this.serviceService.getAll().subscribe(
       (data) => this.serviceList = data
     )

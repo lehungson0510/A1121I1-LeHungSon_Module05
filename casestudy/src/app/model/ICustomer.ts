@@ -3,7 +3,7 @@ export interface ICustomer {
   typeId?: number,
   name?: string,
   birthday?:string,
-  gender?: number,
+  gender?: number | string,
   idCard?: string,
   phone?: string,
   email?: string,

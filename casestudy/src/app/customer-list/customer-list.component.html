@@ -37,13 +37,13 @@
       <td>{{customer.address}}</td>
       <td>
 <!--        <a routerLink="/customer/edit">-->
-        <a routerLink="/customer/edit">
-          <button type="button" class="btn btn-info">Edit</button>
+        <a class="btn btn-info" [routerLink]="['/customer/edit', customer.id]" >
+          Edit
         </a>
       </td>
       <td>
         <button type="button"
-                (click)='tempId = customer.id; tempName = customer.name'
+                (click)='temp = customer'
                 class="btn btn-danger"
                 data-toggle="modal"
                 data-target="#exampleModal">
@@ -62,28 +62,29 @@
 <!--    <button class="btn btn-primary btn-outline-dark" (click)="page=page+1">Read more</button>-->
 <!--  </div>-->
 
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+       aria-hidden="true">
     <div class="modal-dialog">
       <!--    **********Thêm thẻ form **************-->
       <form action="customer">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title " id="exampleModalLabel">Cảnh báo!!!</h5>
+            <h5 class="modal-title" id="exampleModalLabel">Xác nhận xóa!!</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
           <div class="modal-body">
             <!--         ***************************** thêm ***********************-->
-            <input hidden type="text" id="{{tempId}}" name="id">
-            <span>Bạn có muốn xóa khách hàng </span>
-            <span class="text-danger" id="nameCustomer">{{tempName}}</span> không?
+            <input hidden type="text" id="{{temp.id}}" name="id">
+            <span>Bạn có muốn xóa kháchh hàng </span>
+            <span class="text-danger" id="nameCustomer">{{temp.name}}</span> không?
             <!--       *************************************************************-->
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Không</button>
             <!--          *********************** Chuyển type button sang submit *********************-->
-            <button type="submit" name="action" value="delete" class="btn btn-primary">Có</button>
+            <button type="submit" name="action" data-dismiss="modal" (click)="deleteCustomer(temp.id)" value="delete" class="btn btn-primary">Có</button>
           </div>
         </div>
       </form>

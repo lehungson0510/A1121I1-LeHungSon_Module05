@@ -73,7 +73,7 @@
               alt="">
           </div>
           <ul class="social-media">
-            <li><a [routerLink]="['service/edit',service.id]"  style="width: 75px" class="btn btn-warning btn-outline-dark">Edit</a></li>
+            <li><a [routerLink]="['/service/edit',service.id]"  style="width: 75px" class="btn btn-warning btn-outline-dark">Edit</a></li>
             <li><a href="#">
               <button type="button"
                      (click)="temp = service"
@@ -95,6 +95,7 @@
   <div class="w-100 d-flex justify-content-center" *ngIf="page*6 < serviceList.length">
   <button class="btn btn-info btn-outline-dark" (click)="page=page+1">Load more</button>
   </div>
+
   <!--***************** Xóa có modal ***********************-->
 
   <!--  <button type="button"-->

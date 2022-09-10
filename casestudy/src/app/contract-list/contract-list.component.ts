@@ -16,16 +16,15 @@ import {ContractService} from "../service/contract.service";
 })
 export class ContractListComponent implements OnInit {
   contractList: IContract[];
-  employeeList: IEmployee[] = EmployeeDao.employeeList;
-  customerList: ICustomer[] = CustomerDao.customerList;
-  serviceList: IService[] = ServiceDao.serviceList;
   page: number = 1;
 
   constructor(private contractService: ContractService) {
   }
 
   ngOnInit(): void {
-    this.contractList = this.contractService.getAllContract();
+    this.contractService.getAllContract().subscribe(
+      (data) => this.contractList = data
+    )
   }
 
 }

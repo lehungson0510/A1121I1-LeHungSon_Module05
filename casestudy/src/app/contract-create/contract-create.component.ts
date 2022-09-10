@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {ContractService} from "../service/contract.service";
 import {Router} from "@angular/router";
@@ -12,24 +12,33 @@ export class ContractCreateComponent implements OnInit {
   contractForm: FormGroup;
 
   constructor(private contractService: ContractService,
-              private router: Router) { }
+              private router: Router) {
+  }
 
   ngOnInit(): void {
     this.contractForm = new FormGroup({
-      id: new FormControl('',[Validators.required]),
-      startDate: new FormControl('',[Validators.required]),
-      endDate: new FormControl('',[Validators.required]),
-      deposit: new FormControl('',[Validators.required, Validators.min(0)]),
-      totalMoney: new FormControl('',[Validators.required, Validators.min(0)]),
-      employeeId: new FormControl('',[Validators.required]),
-      customerId: new FormControl('',[Validators.required]),
-      serviceId: new FormControl('',[Validators.required]),
+      id: new FormControl(''),
+      startDate: new FormControl('', [Validators.required]),
+      endDate: new FormControl('', [Validators.required]),
+      deposit: new FormControl('', [Validators.required, Validators.min(0)]),
+      totalMoney: new FormControl('', [Validators.required, Validators.min(0)]),
+      employeeId: new FormControl('', [Validators.required]),
+      customerId: new FormControl('', [Validators.required]),
+      serviceId: new FormControl('', [Validators.required]),
     })
   }
 
   createContract() {
     console.log(this.contractForm.value);
-    this.contractService.createContract(this.contractForm.value);
-    this.router.navigateByUrl('/contract/list')
+    const value = this.contractForm.value;
+    this.contractService.createContract(value).subscribe(
+      () => {
+      },
+      () => {
+      },
+      () => {
+        this.router.navigateByUrl('/contract/list')
+      },
+    );
   }
 }

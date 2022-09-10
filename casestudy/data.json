@@ -53,16 +53,187 @@
       "name": "OCEAN STUDIO SUITE",
       "area": 40.1,
       "image": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/159963011.jpg?k=5c0da3bc6f3713139c1d631115a1feab2c13e75f13890aac64d86d044ab41ddb&o=&hp=1"
+    },
+    {
+      "id": 10,
+      "name": "ABC",
+      "area": "100",
+      "image": "https://media-cdn-v2.laodong.vn/Storage/NewsPortal/2021/5/26/913299/Ngan-Ha25.jpg",
+      "cost": "10000000",
+      "maxPeople": "5",
+      "rentTypeId": "2",
+      "serviceTypeId": "2",
+      "standard": "no",
+      "description": "no",
+      "poolArea": "100",
+      "floors": "3"
+    },
+    {
+      "id": 11,
+      "name": "abc",
+      "area": "123",
+      "image": "https://vcdn-dulich.vnecdn.net/2021/12/24/An-Giang-0-jpeg-1470-1640315739.jpg",
+      "cost": "10000000",
+      "maxPeople": "3",
+      "rentTypeId": "1",
+      "serviceTypeId": "1",
+      "standard": "ab",
+      "description": "ab",
+      "poolArea": "111",
+      "floors": "3"
+    },
+    {
+      "id": 12,
+      "name": "BEACH FRONT VILLAS",
+      "area": 900,
+      "image": "https://dulichbiendanang.net/wp-content/uploads/2020/12/gioi-thieu-ve-furama-resort-Da-Nang-1.jpg"
+    },
+    {
+      "id": 13,
+      "name": "POOL VILLAS",
+      "area": 320,
+      "image": "http://cdn.home-designing.com/wp-content/uploads/2015/11/glass-house-with-pool.jpg"
+    },
+    {
+      "id": 14,
+      "name": "BEACH FRONT VILLAS",
+      "area": 900,
+      "image": "https://dulichbiendanang.net/wp-content/uploads/2020/12/gioi-thieu-ve-furama-resort-Da-Nang-1.jpg"
+    },
+    {
+      "id": 15,
+      "name": "POOL VILLAS",
+      "area": 320,
+      "image": "http://cdn.home-designing.com/wp-content/uploads/2015/11/glass-house-with-pool.jpg"
     }
   ],
-  "comments": [
+  "customers": [
     {
       "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "typeId": 1,
+      "name": "Lê Sơn",
+      "birthday": "2000-10-05",
+      "gender": "1",
+      "phone": "0123456789",
+      "email": "a@gmail.com",
+      "address": "Huế",
+      "idCard": "000111222"
+    },
+    {
+      "id": 2,
+      "typeId": 2,
+      "name": "Sơn Lê",
+      "birthday": "2000-10-05",
+      "gender": "2",
+      "phone": "0123456789",
+      "email": "a@gmail.com",
+      "address": "Huế",
+      "idCard": "111222333"
+    },
+    {
+      "id": 3,
+      "typeId": 1,
+      "name": "Hùng Sơn",
+      "birthday": "2000-10-05",
+      "gender": "1",
+      "phone": "0123456789",
+      "email": "a@gmail.com",
+      "address": "Huế",
+      "idCard": "222333444"
+    },
+    {
+      "id": 4,
+      "typeId": 2,
+      "name": "Lê Hùng",
+      "birthday": "2000-10-05",
+      "gender": "1",
+      "phone": "0901234567",
+      "email": "a@gmail.com",
+      "address": "Huế",
+      "idCard": "333444555"
+    },
+    {
+      "id": 5,
+      "typeId": 1,
+      "name": "Sơn Lê",
+      "birthday": "2000-10-05",
+      "gender": "1",
+      "phone": "0123456789",
+      "email": "a@gmail.com",
+      "address": "Huế",
+      "idCard": "444555666"
     }
   ],
-  "profile": {
-    "name": "typicode"
-  }
+  "contracts": [
+    {
+      "id": 1,
+      "startDate": "2000-10-05",
+      "endDate": "2100-10-05",
+      "deposit": 10000,
+      "totalMoney": 100000,
+      "employeeId": 2,
+      "customerId": 3,
+      "serviceId": 3
+    },
+    {
+      "id": 2,
+      "startDate": "2000-10-05",
+      "endDate": "2100-10-05",
+      "deposit": 10000,
+      "totalMoney": 100000,
+      "employeeId": 1,
+      "customerId": 1,
+      "serviceId": 1
+    },
+    {
+      "id": 3,
+      "startDate": "2000-10-05",
+      "endDate": "2100-10-05",
+      "deposit": 10000,
+      "totalMoney": 100000,
+      "employeeId": 1,
+      "customerId": 2,
+      "serviceId": 2
+    },
+    {
+      "id": 4,
+      "startDate": "2000-10-05",
+      "endDate": "2100-10-05",
+      "deposit": 10000,
+      "totalMoney": 100000,
+      "employeeId": 3,
+      "customerId": 3,
+      "serviceId": 1
+    },
+    {
+      "id": 5,
+      "startDate": "2000-10-05",
+      "endDate": "2100-10-05",
+      "deposit": 10000,
+      "totalMoney": 100000,
+      "employeeId": 2,
+      "customerId": 2,
+      "serviceId": 1
+    },
+    {
+      "id": 6,
+      "startDate": "2000-10-05",
+      "endDate": "2100-10-05",
+      "deposit": 10000,
+      "totalMoney": 100000,
+      "employeeId": 3,
+      "customerId": 2,
+      "serviceId": 3
+    },
+    {
+      "id": 7,
+      "startDate": "2022-09-05",
+      "endDate": "2022-09-16",
+      "deposit": "12",
+      "totalMoney": "12",
+      "employeeId": "1",
+      "customerId": "1",
+      "serviceId": "1"
+    }
+  ]
 }

@@ -1,0 +1,11 @@
+
+.back-top{
+  position: fixed;
+  bottom: 30px;
+  z-index: 1000;
+  right: 20px;
+}
+
+.back-top :hover{
+  cursor: pointer;
+}
