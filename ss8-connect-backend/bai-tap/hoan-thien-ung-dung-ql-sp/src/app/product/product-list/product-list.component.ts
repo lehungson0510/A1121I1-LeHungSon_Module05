@@ -10,7 +10,7 @@ import {Category} from "../models/category";
   styleUrls: ['./product-list.component.css']
 })
 export class ProductListComponent implements OnInit {
-  products: Product[];
+  products: Product[] = [];
   temp: Product = {
     // Không có cái này sẽ bị lỗi hiển thị vì chưa có trường 'name'
     "category": {}

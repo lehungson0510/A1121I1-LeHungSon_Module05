@@ -9,7 +9,7 @@ import {ActivatedRoute} from '@angular/router';
   styleUrls: ['./dictionary-detail.component.css']
 })
 export class DictionaryDetailComponent implements OnInit {
-  word: IWord;
+  word: IWord = {};
 
   constructor(private dictionaryService: DictionaryService,
               private activeRouter: ActivatedRoute) { }

@@ -9,7 +9,7 @@ import {Router} from '@angular/router';
   styleUrls: ['./dictionary-page.component.css']
 })
 export class DictionaryPageComponent implements OnInit {
-  wordList: IWord[];
+  wordList: IWord[] = [];
 
   constructor(private dictionaryService: DictionaryService,
               private router: Router) {

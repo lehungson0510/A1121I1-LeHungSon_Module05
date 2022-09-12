@@ -9,9 +9,9 @@ import {Router} from "@angular/router";
   styleUrls: ['./product-list.component.css']
 })
 export class ProductListComponent implements OnInit {
-  products: Product[];
+  products: Product[] =[];
   temp: Product = {};
-  mes: string;
+  mes: string ='';
   page: string | number = 1;
 
   constructor(private productService: ProductService,

@@ -12,7 +12,7 @@ import {Product} from "../model/product";
 export class ProductEditComponent implements OnInit {
 
   productForm: FormGroup;
-  product: Product;
+  product: Product = {};
 
   constructor(private productService: ProductService,
               private router: Router,

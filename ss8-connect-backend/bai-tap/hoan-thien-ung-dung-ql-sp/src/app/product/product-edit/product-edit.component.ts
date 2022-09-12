@@ -13,7 +13,7 @@ import {CategoryService} from "../../service/category.service";
 })
 export class ProductEditComponent implements OnInit {
   productForm: FormGroup;
-  product: Product;
+  product: Product ={};
   categoryList: Category[] = [];
 
   constructor(private productService: ProductService,
