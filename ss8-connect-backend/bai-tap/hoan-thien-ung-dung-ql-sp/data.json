@@ -56,8 +56,8 @@
       "price": 10000000,
       "description": "Brand new",
       "category": {
-        "id": 3,
-        "name": "Oppo"
+        "id": 1,
+        "name": "Iphone"
       }
     },
     {
@@ -78,6 +78,16 @@
       "category": {
         "id": 3,
         "name": "Oppo"
+      }
+    },
+    {
+      "id": 9,
+      "name": "hello",
+      "price": 1000000,
+      "description": "Không có gì",
+      "category": {
+        "id": 2,
+        "name": "Xiaomi"
       }
     }
   ],

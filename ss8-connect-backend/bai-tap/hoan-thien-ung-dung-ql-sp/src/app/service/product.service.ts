@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {Product} from "../product/models/product";
+import {Category} from "../product/models/category";
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +15,7 @@ export class ProductService {
   }
 
   getAll(): Observable<Product[]> {
-    return this.http.get<Product[]>(this.API_URL);
+    return this.http.get<Product[]>(this.API_URL + `?_sort=category.name&_order=asc`);
   }
 
   create(product: Product): Observable<void> {
@@ -31,5 +32,18 @@ export class ProductService {
 
   findById(id: number): Observable<Product> {
     return this.http.get<Product>(this.API_URL + '/' + id);
+  }
+
+  // search(name: string, priceStart: number, priceEnd: number, categoryId: number): Observable<Product[]>{
+  //   return this.http.get<Product[]>(this.API_URL + '?name_like = ${name}&_start=${priceStart}&_end=${priceEnd}$product.category.id=${category.id}')
+  // }
+  // search(name: string): Observable<Product[]>{
+  //   return this.http.get<Product[]>(this.API_URL + `?name_like=${name}`)
+  // }
+  search(name: string, priceStart: number, priceEnd: number, categoryId: string): Observable<Product[]> {
+    if (!isNaN(priceEnd) && !isNaN(priceEnd)) {
+      return this.http.get<Product[]>(this.API_URL + `?name_like=${name}&price_gte=${priceStart}&price_lte=${priceEnd}&category.id_like=${categoryId}`)
+    }
+    return this.http.get<Product[]>(`${this.API_URL}?name_like=${name}&category.id_like=${categoryId}&_sort=category.name&_order=asc`)
   }
 }

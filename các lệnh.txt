@@ -32,8 +32,12 @@ node path_name.js
 }
 
 
-------- Thêm bootstrap 4.6: --------------
+***------- Thêm bootstrap 4.6: --------------
 	npm i -s bootstrap@4.6
+
+
+***------- Thêm jquery: --------------
+	npm i -s jquery
 
 Thêm vào file src/styles.css: 
 	@import "~bootstrap/dist/css/bootstrap.css";
@@ -55,11 +59,17 @@ ng g s tên
 -------- tạo một interface mới trong thư mục model --------
 ng g i model/song
 
--------- Import thư viện phân trang -----------
+***-------- Import thư viện phân trang -----------
 npm i ngx-pagination@5.1.1
 
--------- Cài đặt json server
+***-------- Cài đặt json server
  npm install -g json-server
 
--------- Chạy json server và xem url  -------------
+***-------- Chạy json server và xem url  -------------
 json-server --watch data.json
+
+------------ Sort ------------
+GET /posts?_sort=views&_order=asc
+GET /posts/1/comments?_sort=votes&_order=asc
+GET /posts?_sort=user,views&_order=desc,asc  // Sort nhiều trường
+GET /posts?views_gte=10&views_lte=20         // Sort trong khoảng (vd: tiền, ...)

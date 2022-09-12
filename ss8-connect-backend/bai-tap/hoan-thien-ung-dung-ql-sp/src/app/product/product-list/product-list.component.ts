@@ -3,6 +3,7 @@ import {Product} from "../models/product";
 import {Router} from "@angular/router";
 import {ProductService} from "../../service/product.service";
 import {Category} from "../models/category";
+import {CategoryService} from "../../service/category.service";
 
 @Component({
   selector: 'app-product-list',
@@ -11,18 +12,20 @@ import {Category} from "../models/category";
 })
 export class ProductListComponent implements OnInit {
   products: Product[] = [];
+  categoryList: Category[] = [];
   temp: Product = {
-    // Không có cái này sẽ bị lỗi hiển thị vì chưa có trường 'name'
     "category": {}
   };
   mes: string;
   page: string | number = 1;
 
-  constructor(private productService: ProductService) {
+  constructor(private productService: ProductService,
+              private categoryService: CategoryService) {
   }
 
   ngOnInit(): void {
     this.getAllProduct();
+    this.getAllCategory();
   }
 
   delete(product: Product) {
@@ -46,4 +49,29 @@ export class ProductListComponent implements OnInit {
     ;
   }
 
+  getAllCategory() {
+    this.categoryService.getAll().subscribe(
+      (data) => {
+        this.categoryList = data;
+      })
+    ;
+  }
+
+  search(name: string, priceStart: string, priceEnd: string, category: string) {
+
+    const priceStartInt = parseInt(priceStart);
+    const priceEndInt = parseInt(priceEnd);
+    // const categoryIdInt = parseInt(category);
+    // console.log(categoryIdInt)
+    // this.productService.search(name, priceStartInt, priceEndInt, categoryIdInt).subscribe(
+    this.productService.search(name, priceStartInt, priceEndInt, category).subscribe(
+      (data) => this.products = data
+    )
+  }
+
+  // search(name: string) {
+  //   this.productService.search(name).subscribe(
+  //     (data) => this.products = data
+  //   )
+  // }
 }

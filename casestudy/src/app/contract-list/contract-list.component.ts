@@ -15,7 +15,7 @@ import {ContractService} from "../service/contract.service";
   styleUrls: ['./contract-list.component.css']
 })
 export class ContractListComponent implements OnInit {
-  contractList: IContract[];
+  contractList: IContract[] = [];
   page: number = 1;
 
   constructor(private contractService: ContractService) {

@@ -20,9 +20,9 @@ export class ProductCreateComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.categoryService.getAll().subscribe(
-      (data) => this.categoryList = data
-    );
+      this.categoryService.getAll().subscribe(
+        (data) => this.categoryList = data
+      );
 
     this.productForm = new FormGroup({
       id: new FormControl(),

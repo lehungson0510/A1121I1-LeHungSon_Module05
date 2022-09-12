@@ -10,7 +10,7 @@ import {Observable} from "rxjs";
   styleUrls: ['./customer-list.component.css']
 })
 export class CustomerListComponent implements OnInit {
-  customerList: ICustomer[];
+  customerList: ICustomer[] = [];
   page: number = 1;
   temp: ICustomer = {};
 

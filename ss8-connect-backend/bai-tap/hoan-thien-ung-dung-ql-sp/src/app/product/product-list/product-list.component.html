@@ -1,5 +1,13 @@
 <h1 class="text-center">Danh sách sản phẩm</h1>
 <h3 class="text-success">{{mes}}</h3>
+<input #name placeholder="name product">
+<input #priceStart type="number" placeholder="price start">
+<input #priceEnd type="number" placeholder="price end">
+<select #category>
+  <option value="">Chọn</option>
+  <option *ngFor="let category of categoryList" [value]="category.id">{{category.name}}</option>
+</select>
+<button (click)="search(name.value,priceStart.value, priceEnd.value, category.value)">Search</button>
 <table class="table table-striped table-hover">
   <thead>
   <tr>
