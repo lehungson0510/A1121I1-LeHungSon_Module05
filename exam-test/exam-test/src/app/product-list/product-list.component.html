@@ -1,0 +1,109 @@
+<h1 class="text-center">Danh sách sản phẩm</h1>
+<input class="mr-1 " #name placeholder="name product">
+<input class="mr-1" #priceStart type="number" placeholder="price start">
+<input class="mr-1" #priceEnd type="number" placeholder="price end">
+<select class="mr-1" #category>
+  <option value="">Chọn</option>
+  <option *ngFor="let category of categoryList" [value]="category.id">{{category.name}}</option>
+</select>
+<button (click)="search(name.value,priceStart.value, priceEnd.value, category.value)">Search</button>
+
+<div class="table-responsive mt-4">
+  <table class="table table-striped table-hover">
+    <thead>
+    <tr>
+      <td>STT</td>
+      <td>Tên</td>
+      <td>Giá</td>
+      <td>Ngày sản xuất</td>
+      <td>Hạn sử dụng</td>
+      <td>Danh mục</td>
+      <td>Giới tính</td>
+      <td colspan="3" class="text-center">Chức năng</td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let product of productList | paginate:{itemsPerPage: 3, currentPage: page}; index as i">
+      <td>{{i + 1}}</td>
+      <td>{{product.name}}</td>
+      <td>{{product.price | currency:'VND'}}</td>
+      <td>{{product.startDate | date:"dd/MM/yyyy"}}</td>
+      <td>{{product.endDate | date:"dd/MM/yyyy"}}</td>
+      <td>{{product.category.name}}</td>
+      <td *ngIf="product.gender == 0">Nam</td>
+      <td *ngIf="product.gender == 1">Nữ</td>
+      <td class="text-center"><a [routerLink]="['product/edit',product.id]"
+                                 class="btn btn-warning btn-outline-dark">Sửa</a>
+      </td>
+      <td class="text-center">
+        <button type="button"
+                (click)='temp = product'
+                class="btn btn-info"
+                data-toggle="modal"
+                data-target="#exampleModal">
+          Chi tiết
+        </button>
+      </td>
+      <td class="text-center">
+        <button type="button"
+                (click)='temp = product'
+                class="btn btn-danger"
+                data-toggle="modal"
+                data-target="#exampleModal">
+          Xóa
+        </button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title text-warning" id="exampleModalLabel">Cảnh báo!!</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body w-100">
+        <!--        <table class="table">-->
+        <!--          <tr>-->
+        <!--            <td class="p-1">Tên:</td>-->
+        <!--            <td class="p-1">{{temp.name}}</td>-->
+        <!--          </tr>-->
+        <!--          <tr>-->
+        <!--            <td class="p-1">Giá:</td>-->
+        <!--            <td class="p-1"> {{temp.price | currency:'VND'}}</td>-->
+        <!--          </tr>-->
+        <!--          <tr>-->
+        <!--            <td class="p-1">Ngày sản xuất:</td>-->
+        <!--            <td class="p-1">{{temp.startDate}}</td>-->
+        <!--          </tr>-->
+        <!--          <tr>-->
+        <!--            <td class="p-1">Hạn sử dụng:</td>-->
+        <!--            <td class="p-1">{{temp.endDate}}</td>-->
+        <!--          </tr>-->
+        <!--          <tr>-->
+        <!--            <td class="p-1">Giới tính:</td>-->
+        <!--            <td class="p-1" *ngIf="temp.gender == 0">Nam</td>-->
+        <!--            <td class="p-1" *ngIf="temp.gender == 1">Nữ</td>-->
+        <!--          </tr>-->
+        <!--          <tr>-->
+        <!--            <td class="p-1">Danh mục:</td>-->
+        <!--            <td class="p-1">{{temp.category.name}}</td>-->
+        <!--          </tr>-->
+        <!--        </table>-->
+        <span>Bạn có muốn xóa sản phẩm <span class="text-danger">{{temp.name}}</span></span>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button (click)="delete(temp)" type="button" data-dismiss="modal" class="btn btn-primary">Xóa</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="d-flex justify-content-end">
+  <pagination-controls (pageChange)="page = $event"></pagination-controls>
+</div>

@@ -57,14 +57,15 @@ export class ProductListComponent implements OnInit {
     ;
   }
 
-  search(name: string, priceStart: string, priceEnd: string, category: string) {
+  search(name: string, priceStart: string, priceEnd: string, categoryId: string) {
 
     const priceStartInt = parseInt(priceStart);
     const priceEndInt = parseInt(priceEnd);
+    this.page =1;
     // const categoryIdInt = parseInt(category);
     // console.log(categoryIdInt)
     // this.productService.search(name, priceStartInt, priceEndInt, categoryIdInt).subscribe(
-    this.productService.search(name, priceStartInt, priceEndInt, category).subscribe(
+    this.productService.search(name, priceStartInt, priceEndInt, categoryId).subscribe(
       (data) => this.products = data
     )
   }

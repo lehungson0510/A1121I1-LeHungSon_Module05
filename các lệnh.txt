@@ -72,4 +72,7 @@ json-server --watch data.json
 GET /posts?_sort=views&_order=asc
 GET /posts/1/comments?_sort=votes&_order=asc
 GET /posts?_sort=user,views&_order=desc,asc  // Sort nhiều trường
-GET /posts?views_gte=10&views_lte=20         // Sort trong khoảng (vd: tiền, ...)
+
+------------ Search -------------
+GET /posts?price_gte=10&price_lte=20         // Tìm kiếm trong khoảng (vd: tiền, ...)
+GET /posts?name_like=nameSearch		     // Tìm kiếm gần đúng

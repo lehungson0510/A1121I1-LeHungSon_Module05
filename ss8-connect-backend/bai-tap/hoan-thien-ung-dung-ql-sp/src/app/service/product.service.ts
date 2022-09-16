@@ -34,14 +34,8 @@ export class ProductService {
     return this.http.get<Product>(this.API_URL + '/' + id);
   }
 
-  // search(name: string, priceStart: number, priceEnd: number, categoryId: number): Observable<Product[]>{
-  //   return this.http.get<Product[]>(this.API_URL + '?name_like = ${name}&_start=${priceStart}&_end=${priceEnd}$product.category.id=${category.id}')
-  // }
-  // search(name: string): Observable<Product[]>{
-  //   return this.http.get<Product[]>(this.API_URL + `?name_like=${name}`)
-  // }
   search(name: string, priceStart: number, priceEnd: number, categoryId: string): Observable<Product[]> {
-    if (!isNaN(priceEnd) && !isNaN(priceEnd)) {
+    if (!isNaN(priceStart) && !isNaN(priceEnd)) {
       return this.http.get<Product[]>(this.API_URL + `?name_like=${name}&price_gte=${priceStart}&price_lte=${priceEnd}&category.id_like=${categoryId}`)
     }
     return this.http.get<Product[]>(`${this.API_URL}?name_like=${name}&category.id_like=${categoryId}&_sort=category.name&_order=asc`)

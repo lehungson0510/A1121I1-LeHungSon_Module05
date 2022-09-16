@@ -105,20 +105,23 @@
       "name": "POOL VILLAS",
       "area": 320,
       "image": "http://cdn.home-designing.com/wp-content/uploads/2015/11/glass-house-with-pool.jpg"
+    },
+    {
+      "id": 16,
+      "name": "abc",
+      "area": 123,
+      "image": "https://vcdn-dulich.vnecdn.net/2021/12/24/An-Giang-0-jpeg-1470-1640315739.jpg",
+      "cost": 1223,
+      "maxPeople": 12,
+      "rentTypeId": "2",
+      "serviceTypeId": "1",
+      "standard": "a",
+      "description": "abc",
+      "poolArea": 123,
+      "floors": 12
     }
   ],
   "customers": [
-    {
-      "id": 1,
-      "typeId": 1,
-      "name": "Lê Sơn",
-      "birthday": "2000-10-05",
-      "gender": "1",
-      "phone": "0123456789",
-      "email": "a@gmail.com",
-      "address": "Huế",
-      "idCard": "000111222"
-    },
     {
       "id": 2,
       "typeId": 2,
@@ -176,16 +179,6 @@
       "serviceId": 3
     },
     {
-      "id": 2,
-      "startDate": "2000-10-05",
-      "endDate": "2100-10-05",
-      "deposit": 10000,
-      "totalMoney": 100000,
-      "employeeId": 1,
-      "customerId": 1,
-      "serviceId": 1
-    },
-    {
       "id": 3,
       "startDate": "2000-10-05",
       "endDate": "2100-10-05",
@@ -224,26 +217,6 @@
       "employeeId": 3,
       "customerId": 2,
       "serviceId": 3
-    },
-    {
-      "id": 7,
-      "startDate": "2022-09-05",
-      "endDate": "2022-09-16",
-      "deposit": "12",
-      "totalMoney": "12",
-      "employeeId": "1",
-      "customerId": "1",
-      "serviceId": "1"
-    },
-    {
-      "id": 8,
-      "startDate": "2022-09-16",
-      "endDate": "2022-09-14",
-      "deposit": "1",
-      "totalMoney": "1",
-      "employeeId": "1",
-      "customerId": "1",
-      "serviceId": "1"
     }
   ]
 }

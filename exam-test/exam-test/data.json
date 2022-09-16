@@ -1,0 +1,110 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Sữa1",
+      "price": 1,
+      "startDate": "2000-10-05",
+      "endDate": "2011-10-05",
+      "gender": 0,
+      "category": {
+        "id": 1,
+        "name": "Sữa có đường"
+      }
+    },
+    {
+      "id": 2,
+      "name": "Sữa2",
+      "price": 4000,
+      "startDate": "2000-10-05",
+      "endDate": "2012-10-05",
+      "gender": 1,
+      "category": {
+        "id": 2,
+        "name": "Sữa không đường"
+      }
+    },
+    {
+      "id": 3,
+      "name": "Sữa3",
+      "price": 3000,
+      "startDate": "2000-10-05",
+      "endDate": "2013-10-05",
+      "gender": 1,
+      "category": {
+        "id": 1,
+        "name": "Sữa có đường"
+      }
+    },
+    {
+      "id": 4,
+      "name": "Sữa4",
+      "price": 2000,
+      "startDate": "2000-10-05",
+      "endDate": "2014-10-05",
+      "gender": 0,
+      "category": {
+        "id": 2,
+        "name": "Sữa không đường"
+      }
+    },
+    {
+      "id": 5,
+      "name": "socolaa",
+      "price": 1500,
+      "startDate": "2022-09-10",
+      "endDate": "2022-09-11",
+      "gender": "1",
+      "category": {
+        "id": 2,
+        "name": "Sữa không đường"
+      }
+    },
+    {
+      "id": 6,
+      "name": "theme",
+      "price": 123,
+      "startDate": "2022-09-21",
+      "endDate": "2022-09-10",
+      "gender": 0,
+      "category": {
+        "id": 2,
+        "name": "Sữa không đường"
+      }
+    },
+    {
+      "id": 7,
+      "name": "abc",
+      "price": 132,
+      "startDate": "2022-09-03",
+      "endDate": "2022-09-03",
+      "gender": 1,
+      "category": {
+        "id": 1,
+        "name": "Sữa có đường"
+      }
+    },
+    {
+      "id": 8,
+      "name": "abce",
+      "price": 123,
+      "startDate": "2022-09-16",
+      "endDate": "2022-12-26",
+      "gender": 1,
+      "category": {
+        "id": 1,
+        "name": "Sữa có đường"
+      }
+    }
+  ],
+  "category": [
+    {
+      "id": 1,
+      "name": "Sữa có đường"
+    },
+    {
+      "id": 2,
+      "name": "Sữa không đường"
+    }
+  ]
+}

@@ -1,66 +1,67 @@
 <div class="container ">
-  <h2 class="text-info text-center my-4">Danh sách khách hàng</h2>
-  <table class="table table-hover" id="tableCustomer">
-    <thead>
-    <tr class="table-active">
-      <th>ID</th>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Birthday</th>
-      <th>Gender</th>
-      <th>Id card</th>
-      <th>Phone</th>
-      <th>Email</th>
-      <th>Address</th>
-      <th>Edit</th>
-      <th>Delete</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr *ngFor="let customer of customerList | paginate:{itemsPerPage: 2, currentPage: page}">
-      <th>{{customer.id}}</th>
-      <td>{{customer.name}}</td>
-      <td [ngSwitch]="customer.typeId">
-        <span *ngSwitchCase="1">Diamond</span>
-        <span *ngSwitchCase="2">Platinum</span>
-        <span *ngSwitchCase="3">Gold</span>
-        <span *ngSwitchCase="4">Silver</span>
-        <span *ngSwitchCase="5">Member</span>
-      </td>
-      <td>{{customer.birthday}}</td>
-      <td *ngIf="customer.gender == 1">Nam</td>
-      <td *ngIf="customer.gender == 2">Nữ</td>
-      <td *ngIf="customer.gender == 3">Khác</td>
-      <td>{{customer.idCard}}</td>
-      <td>{{customer.phone}}</td>
-      <td>{{customer.email}}</td>
-      <td>{{customer.address}}</td>
-      <td>
-<!--        <a routerLink="/customer/edit">-->
-        <a class="btn btn-info" [routerLink]="['/customer/edit', customer.id]" >
-          Edit
-        </a>
-      </td>
-      <td>
-        <button type="button"
-                (click)='temp = customer'
-                class="btn btn-danger"
-                data-toggle="modal"
-                data-target="#exampleModal">
-          delete
-        </button>
-      </td>
-    </tr>
-    </tbody>
-  </table>
-
+  <h2 class="text-info text-center my-4">Customers</h2>
+  <div class="table-responsive">
+    <table class="table table-hover" id="tableCustomer">
+      <thead>
+      <tr class="table-active">
+        <th>ID</th>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Birthday</th>
+        <th>Gender</th>
+        <th>Id card</th>
+        <th>Phone</th>
+        <th>Email</th>
+        <th>Address</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let customer of customerList | paginate:{itemsPerPage: 2, currentPage: page}">
+        <th>{{customer.id}}</th>
+        <td>{{customer.name}}</td>
+        <td [ngSwitch]="customer.typeId">
+          <span *ngSwitchCase="1">Diamond</span>
+          <span *ngSwitchCase="2">Platinum</span>
+          <span *ngSwitchCase="3">Gold</span>
+          <span *ngSwitchCase="4">Silver</span>
+          <span *ngSwitchCase="5">Member</span>
+        </td>
+        <td>{{customer.birthday}}</td>
+        <td *ngIf="customer.gender == 1">Nam</td>
+        <td *ngIf="customer.gender == 2">Nữ</td>
+        <td *ngIf="customer.gender == 3">Khác</td>
+        <td>{{customer.idCard}}</td>
+        <td>{{customer.phone}}</td>
+        <td>{{customer.email}}</td>
+        <td>{{customer.address}}</td>
+        <td>
+          <!--        <a routerLink="/customer/edit">-->
+          <a class="btn btn-info" [routerLink]="['/customer/edit', customer.id]">
+            Edit
+          </a>
+        </td>
+        <td>
+          <button type="button"
+                  (click)='temp = customer'
+                  class="btn btn-danger"
+                  data-toggle="modal"
+                  data-target="#exampleModal">
+            delete
+          </button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
   <div class="d-flex justify-content-end">
     <pagination-controls (pageChange)="page = $event"></pagination-controls>
   </div>
 
-<!--  <div class="w-100 d-flex justify-content-center" *ngIf="page*3 < customerList.length">-->
-<!--    <button class="btn btn-primary btn-outline-dark" (click)="page=page+1">Read more</button>-->
-<!--  </div>-->
+  <!--  <div class="w-100 d-flex justify-content-center" *ngIf="page*3 < customerList.length">-->
+  <!--    <button class="btn btn-primary btn-outline-dark" (click)="page=page+1">Read more</button>-->
+  <!--  </div>-->
 
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
        aria-hidden="true">
@@ -84,7 +85,9 @@
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Không</button>
             <!--          *********************** Chuyển type button sang submit *********************-->
-            <button type="submit" name="action" data-dismiss="modal" (click)="deleteCustomer(temp.id)" value="delete" class="btn btn-primary">Có</button>
+            <button type="submit" name="action" data-dismiss="modal" (click)="deleteCustomer(temp.id)" value="delete"
+                    class="btn btn-primary">Có
+            </button>
           </div>
         </div>
       </form>

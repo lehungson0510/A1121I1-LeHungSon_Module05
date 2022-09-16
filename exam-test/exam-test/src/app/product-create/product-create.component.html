@@ -1,0 +1,74 @@
+<h1 class="text-center">Thêm mới sản phẩm</h1>
+<form class="container" [formGroup]="productForm" *ngIf="productForm" (ngSubmit)="submit()">
+  <div class="form-group">
+    <label for="id">Name: <span style="color: red">*</span></label>
+    <input type="text" class="form-control" id="id" placeholder="Enter name" formControlName="name">
+    <small class="text-danger mb-0 pb-0"
+           *ngIf="productForm.get('name').invalid && (productForm.get('name').touched||productForm.get('name').dirty)">
+      Id invalid!!
+    </small>
+  </div>
+
+  <div class="form-group">
+    <label for="price">Price: <span style="color: red">*</span></label>
+    <input type="number" class="form-control" id="price" placeholder="Enter price" formControlName="price">
+    <small class="text-danger mb-0 pb-0"
+           *ngIf="productForm.get('price').invalid && (productForm.get('price').touched||productForm.get('price').dirty)">
+      Id invalid!!
+    </small>
+  </div>
+
+  <div class="form-group">
+    <label for="start">Start-date: <span style="color: red">*</span></label>
+    <input type="date" class="form-control" id="start" placeholder="Enter price" formControlName="startDate">
+    <small class="text-danger mb-0 pb-0"
+           *ngIf="productForm.get('startDate').invalid && (productForm.get('startDate').touched||productForm.get('startDate').dirty)">
+      Id invalid!!
+    </small>
+  </div>
+
+  <div class="form-group">
+    <label for="end">End-date: <span style="color: red">*</span></label>
+    <input type="date" class="form-control" id="end" placeholder="Enter price" formControlName="endDate">
+    <small class="text-danger mb-0 pb-0"
+           *ngIf="productForm.get('endDate').invalid && (productForm.get('endDate').touched||productForm.get('endDate').dirty)">
+      Id invalid!!
+    </small>
+    <div  *ngIf="productForm.hasError('dateError')" class="alert alert-danger" role="alert">
+      Ngay bat dau phai truoc ngay ket thuc
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="type">Gender: <span style="color: red">*</span></label>
+    <div class="form-line">
+      <input type="radio" id="html" name="gender" [value]="0" formControlName="gender">
+        <label for="html">Male</label>
+        <input type="radio" id="css" name="gender" [value]="1" formControlName="gender">
+        <label for="css">Female</label>
+    </div>
+    <small class="text-danger mb-0 pb-0"
+           *ngIf="productForm.get('gender').invalid && (productForm.get('gender').touched||productForm.get('gender').dirty)">
+      Id invalid!!
+    </small>
+  </div>
+
+  <div class="form-group">
+    <label for="type">Category: <span style="color: red">*</span></label>
+    <select class="custom-select" id="type" formControlName="category">
+      <option value="" disabled selected>Chọn...</option>
+      <option *ngFor="let category of categoryList" [ngValue]="category">{{category.name}}</option>
+    </select>
+    <small class="text-danger mb-0 pb-0"
+           *ngIf="productForm.get('category').invalid && (productForm.get('category').touched||productForm.get('category').dirty)">
+      Id invalid!!
+    </small>
+  </div>
+
+  <div class="text-center">
+    <button type="submit" class="btn btn-outline-success mr-1" [disabled]="productForm.invalid" style="width: 75px">
+      Add
+    </button>
+    <button type="reset" class="btn btn-outline-danger">Cancel</button>
+  </div>
+</form>

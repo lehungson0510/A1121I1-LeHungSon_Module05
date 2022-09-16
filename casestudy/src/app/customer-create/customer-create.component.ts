@@ -20,7 +20,7 @@ export class CustomerCreateComponent implements OnInit {
       id: new FormControl(''),
       typeId: new FormControl('', [Validators.required]),
       name: new FormControl('', [Validators.required, Validators.pattern('^\\D*$')]),
-      birthday: new FormControl('', Validators.required),
+      birthday: new FormControl('', [Validators.required]),
       gender: new FormControl('', [Validators.required]),
       idCard: new FormControl('', [Validators.required, Validators.pattern('^\\d{9}$|^\\d{11}$')]),
       phone: new FormControl('', [Validators.required, Validators.pattern('^(090|091|\\(84\\)\\+90|\\(84\\)\\+91)\\d{7}$')]),
