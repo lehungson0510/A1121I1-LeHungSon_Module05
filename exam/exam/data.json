@@ -1,16 +1,162 @@
 {
-  "posts": [
+  "packages": [
     {
       "id": 1,
-      "title": "json-server",
-      "author": "typicode"
+      "code": "LH-0001",
+      "product": {
+        "id": 1,
+        "name": "Sting",
+        "factory": "A",
+        "price": 1000,
+        "currency": "thùng"
+      },
+      "quantity": 20,
+      "dateImport": "2020-12-28",
+      "dateStart": "2020-09-10",
+      "dateEnd": "2021-10-09"
+    },
+    {
+      "id": 2,
+      "code": "LH-0002",
+      "product": {
+        "id": 2,
+        "name": "Oshi",
+        "factory": "A",
+        "price": 1000,
+        "currency": "thùng"
+      },
+      "quantity": 20,
+      "dateImport": "2020-11-02",
+      "dateStart": "2020-10-15",
+      "dateEnd": "2021-10-15"
+    },
+    {
+      "id": 3,
+      "code": "LH-0003",
+      "product": {
+        "id": 3,
+        "name": "Tiger",
+        "factory": "A",
+        "price": 1000,
+        "currency": "thùng"
+      },
+      "quantity": 20,
+      "dateImport": "2020-12-01",
+      "dateStart": "2020-09-14",
+      "dateEnd": "2021-09-10"
+    },
+    {
+      "id": 4,
+      "code": "LH-0004",
+      "product": {
+        "id": 2,
+        "name": "Oshi",
+        "factory": "B",
+        "price": 1000,
+        "currency": "thùng"
+      },
+      "quantity": 20,
+      "dateImport": "2020-12-28",
+      "dateStart": "2020-09-10",
+      "dateEnd": "2021-10-09"
+    },
+    {
+      "id": 5,
+      "code": "LH-1234",
+      "product": {
+        "id": 1,
+        "name": "Sting",
+        "factory": "A",
+        "price": 1000,
+        "currency": "thùng"
+      },
+      "quantity": 123,
+      "dateImport": "2022-09-02",
+      "dateStart": "2022-09-23",
+      "dateEnd": "2022-09-18"
+    },
+    {
+      "id": 6,
+      "code": "LH-1235",
+      "product": {
+        "id": 1,
+        "name": "Sting",
+        "factory": "A",
+        "price": 1000,
+        "currency": "thùng"
+      },
+      "quantity": 1,
+      "dateImport": "2022-09-16",
+      "dateStart": "2022-09-16",
+      "dateEnd": "2022-09-18"
+    },
+    {
+      "id": 7,
+      "code": "LH-1111",
+      "product": {
+        "id": 1,
+        "name": "Sting",
+        "factory": "A",
+        "price": 1000,
+        "currency": "thùng"
+      },
+      "quantity": 123,
+      "dateImport": "2022-09-16",
+      "dateStart": "2022-09-16",
+      "dateEnd": "2022-09-18"
+    },
+    {
+      "id": 8,
+      "code": "LH-2345",
+      "product": {
+        "id": 1,
+        "name": "Sting",
+        "factory": "A",
+        "price": 1000,
+        "currency": "thùng"
+      },
+      "quantity": 10,
+      "dateImport": "2022-09-14",
+      "dateStart": "2022-09-13",
+      "dateEnd": "2022-09-15"
+    },
+    {
+      "id": 9,
+      "code": "LH-0000",
+      "product": {
+        "id": 3,
+        "name": "Tiger",
+        "factory": "C",
+        "price": 2000,
+        "currency": "thùng"
+      },
+      "quantity": 13,
+      "dateImport": "2022-09-16",
+      "dateStart": "2022-09-15",
+      "dateEnd": "2022-09-17"
     }
   ],
-  "comments": [
+  "products": [
     {
       "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "name": "Sting",
+      "factory": "A",
+      "price": 1000,
+      "currency": "thùng"
+    },
+    {
+      "id": 2,
+      "name": "Oshi",
+      "factory": "B",
+      "price": 3000,
+      "currency": "thùng"
+    },
+    {
+      "id": 3,
+      "name": "Tiger",
+      "factory": "C",
+      "price": 2000,
+      "currency": "thùng"
     }
   ],
   "profile": {

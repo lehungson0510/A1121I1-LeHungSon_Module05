@@ -57,16 +57,16 @@ export class ProductListComponent implements OnInit {
     );
   }
 
-  delete(temp: Product) {
-    this.productService.delete(temp.id).subscribe(
-      () => {
-      },
-      () => {
-      },
-      () => {
-        this.ngOnInit();
-        alert('Xóa thành công');
-      },
-    );
-  }
+    delete(temp: Product) {
+      this.productService.delete(temp.id).subscribe(
+        () => {
+        },
+        () => {
+        },
+        () => {
+          this.ngOnInit();
+          alert('Xóa thành công');
+        },
+      );
+    }
 }

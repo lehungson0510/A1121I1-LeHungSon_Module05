@@ -1,1 +1,71 @@
-<p>create works!</p>
+<h1 class="text-center">Thêm mới lô hàng</h1>
+<form class="container" [formGroup]="packForm" (ngSubmit)="submit()">
+  <div class="form-group">
+    <label for="code">Mã lô hàng: <span style="color: red">*</span></label>
+    <input type="text" class="form-control" id="code" placeholder="Nhập mã lô hàng" formControlName="code">
+    <small class="text-danger mb-0 pb-0"
+           *ngIf="packForm.get('code').invalid && (packForm.get('code').touched||packForm.get('code').dirty)">
+      Không để trống và theo định dạng LH-XXXX!
+    </small>
+  </div>
+
+  <div class="form-group">
+    <label for="type">Sản phẩm: <span style="color: red">*</span></label>
+    <select class="custom-select" id="type" formControlName="product">
+      <option value="" disabled selected>Chọn...</option>
+      <option *ngFor="let product of productList" [ngValue]="product">{{product.name}}</option>
+    </select>
+    <small class="text-danger mb-0 pb-0"
+           *ngIf="packForm.get('product').invalid && (packForm.get('product').touched||packForm.get('product').dirty)">
+      Không để trống!
+    </small>
+  </div>
+
+  <div class="form-group">
+    <label for="quantity">Số lượng: <span style="color: red">*</span></label>
+    <input type="number" class="form-control" id="quantity" placeholder="Nhập số lượng" formControlName="quantity">
+    <small class="text-danger mb-0 pb-0"
+           *ngIf="packForm.get('quantity').invalid && (packForm.get('quantity').touched||packForm.get('quantity').dirty)">
+      Không để trống và phải là nguyên dương!
+    </small>
+  </div>
+
+  <div class="form-group">
+    <label for="import">Ngày nhập hàng: <span style="color: red">*</span></label>
+    <input type="date" class="form-control" id="import" formControlName="dateImport">
+    <small class="text-danger mb-0 pb-0"
+           *ngIf="packForm.get('dateImport').invalid && (packForm.get('dateImport').touched||packForm.get('dateImport').dirty)">
+      Không để trống!
+    </small>
+  </div>
+
+  <div class="form-group">
+    <label for="start">Ngày sản xuất: <span style="color: red">*</span></label>
+    <input type="date" class="form-control" id="start" placeholder="Enter price" formControlName="dateStart">
+    <small class="text-danger mb-0 pb-0"
+           *ngIf="packForm.get('dateStart').invalid && (packForm.get('dateStart').touched||packForm.get('dateStart').dirty)">
+      Không để trống!
+    </small>
+  </div>
+
+  <div class="form-group">
+    <label for="end">Ngày hết hạn: <span style="color: red">*</span></label>
+    <input type="date" class="form-control" id="end" placeholder="Enter price" formControlName="dateEnd">
+    <small class="text-danger mb-0 pb-0"
+           *ngIf="packForm.get('dateEnd').invalid && (packForm.get('dateEnd').touched||packForm.get('dateEnd').dirty)">
+      Không để trống!
+    </small>
+    <div
+      *ngIf="packForm.hasError('dateError')&&(packForm.get('dateEnd').touched||packForm.get('dateStart').touched||packForm.get('dateImport').touched)"
+      class="text-danger">
+      Ngày sản xuất phải trước ngày hết hạn và ngày nhập hàng, ngày nhập hàng phải trước ngày hết hạn
+    </div>
+  </div>
+
+  <div class="text-center">
+    <button type="submit" class="btn btn-outline-success mr-1" [disabled]="packForm.invalid" style="width: 75px">
+      Add
+    </button>
+    <button type="reset" class="btn btn-outline-danger" routerLink="">Cancel</button>
+  </div>
+</form>
