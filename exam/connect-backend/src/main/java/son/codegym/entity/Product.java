@@ -10,7 +10,7 @@ public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private int productId;
+    private int id;
     private String name;
     private String factory;
     private double price;
@@ -23,8 +23,8 @@ public class Product {
     public Product() {
     }
 
-    public Product(int productId, String name, String factory, double price, String currency, Set<Package> packs) {
-        this.productId = productId;
+    public Product(int id, String name, String factory, double price, String currency, Set<Package> packs) {
+        this.id = id;
         this.name = name;
         this.factory = factory;
         this.price = price;
@@ -32,12 +32,12 @@ public class Product {
         this.packs = packs;
     }
 
-    public int getProductId() {
-        return productId;
+    public int getId() {
+        return id;
     }
 
-    public void setProductId(int productId) {
-        this.productId = productId;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {

@@ -5,11 +5,16 @@ export function identityRevealedValidator(control: AbstractControl): ValidationE
   const dateStart = control.value.dateStart;
   const dateEnd = control.value.dateEnd;
   const dateImport = control.value.dateImport;
-
-  const date1 = formatDate(dateStart, 'yyyy-MM-dd', 'en_US');
-  const date2 = formatDate(dateEnd, 'yyyy-MM-dd', 'en_US');
-  const date3 = formatDate(dateImport, 'yyyy-MM-dd', 'en_US');
-  return (date1 < date2) && (date3 < date2) && (date1 < date3) ? null : {dateError: true};
+  let date1;
+  let date2;
+  let date3;
+  if (dateStart !== '' && dateEnd !== '' && dateImport !== '') {
+    date1 = formatDate(dateStart, 'yyyy-MM-dd', 'en_US');
+    date2 = formatDate(dateEnd, 'yyyy-MM-dd', 'en_US');
+    date3 = formatDate(dateImport, 'yyyy-MM-dd', 'en_US');
+    return (date1 < date2) && (date3 < date2) && (date1 < date3) ? null : {dateError: true};
+  }
+  return (date1 < date2) && (date3 < date2) && (date1 < date3) ? null : {dateError: false};
 }
 
 export function comparePassword(control: AbstractControl): ValidationErrors | null {

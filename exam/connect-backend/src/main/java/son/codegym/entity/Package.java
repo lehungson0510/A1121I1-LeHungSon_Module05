@@ -11,7 +11,7 @@ public class Package {
     private int id;
     private String code;
 
-    @JoinColumn(name = "productId")
+    @JoinColumn(name = "productId", referencedColumnName = "id")
     @ManyToOne
     private Product product;
 

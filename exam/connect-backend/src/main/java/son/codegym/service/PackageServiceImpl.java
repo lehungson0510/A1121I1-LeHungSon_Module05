@@ -1,6 +1,8 @@
 package son.codegym.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import son.codegym.entity.Package;
 import son.codegym.repository.IPackageRepo;
@@ -15,8 +17,8 @@ public class PackageServiceImpl implements IPackageService {
 
 
     @Override
-    public Iterable<Package> findAll() {
-        return packageRepo.findAll();
+    public Page<Package> findAll(Pageable pageable) {
+        return packageRepo.findAll(pageable);
     }
 
     @Override
@@ -34,8 +36,12 @@ public class PackageServiceImpl implements IPackageService {
         packageRepo.deleteById(id);
     }
 
+    //    @Override
+//    public Page<Package> search(String id, String endDate, Pageable pageable) {
+//        return packageRepo.findAllByProduct_NameContainingAndDateEndContaining('%' + id + '%','%' + endDate + '%',pageable);
+//    }
     @Override
-    public Iterable<Package> search(String id) {
-        return packageRepo.search('%' + id + '%');
+    public Page<Package> search(String id, String endDate, Pageable pageable) {
+        return packageRepo.search(id ,  endDate , pageable);
     }
 }

@@ -1,11 +1,13 @@
 package son.codegym.service;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import son.codegym.entity.Package;
 
 import java.util.Optional;
 
 public interface IPackageService<T> {
-    Iterable<T> findAll();
+    Page<T> findAll(Pageable pageable);
 
     Optional<T> findById(int id);
 
@@ -13,5 +15,5 @@ public interface IPackageService<T> {
 
     void remove(int id);
 
-    Iterable<T> search(String id);
+    Page<T> search(String id, String endDate, Pageable pageable);
 }

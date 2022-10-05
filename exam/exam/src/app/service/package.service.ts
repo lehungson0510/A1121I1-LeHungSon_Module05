@@ -14,8 +14,8 @@ export class PackageService {
   constructor(private http: HttpClient) {
   }
 
-  getAll(): Observable<Package[]> {
-    return this.http.get<Package[]>(this.API_URL);
+  getAll(page: number, size: number): Observable<Package[]> {
+    return this.http.get<Package[]>(this.API_URL + '/' + page + '/' + size);
   }
 
   create(pack: Package): Observable<void> {
@@ -39,6 +39,11 @@ export class PackageService {
   }
 
   search(productId: string): Observable<Package[]> {
-    return this.http.get<Package[]>(this.API_URL + '/search/' +  productId);
+    return this.http.get<Package[]>(this.API_URL + '/search/' + productId);
+  }
+
+  searchIdAndEndDate(page: number, size: number, name: string, endDate: string): Observable<Package[]> {
+    return this.http.get<Package[]>(this.API_URL + '/' + page + '/' + size
+      + '?product_id=' + name + '&endDate=' + endDate);
   }
 }

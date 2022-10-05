@@ -1,82 +1,129 @@
 <h1 class="text-center">Danh sách lô hàng</h1>
-<div class="text-center">
-  Sản phẩm:
-  <select class="mr-1" #product>
-    <option value="">Chọn</option>
-    <option *ngFor="let product of productList" [value]="product.productId">{{product.name}}</option>
-  </select>
-  Ngày hết hạn:
-  <input type="date" class="mr-1" #dateEnd placeholder="price start">
-  <br>
-  Ngày nhập hàng:
-
-  Từ
-  <input type="date" class="mr-1" #start placeholder="price start">
-  Đến
-  <input type="date" class="mr-1" #end placeholder="price start">
-  <button class="btn btn-info" (click)="searchName(product.value, dateEnd.value,start.value,end.value)">Search4</button>
-  <button class="btn btn-info" (click)="search(product.value)">Search1</button>
-
-</div>
-<div class="table-responsive mt-4">
-  <table class="table table-striped table-hover">
-    <thead>
-    <tr class="table-success">
-      <td>Mã lô hàng</td>
-      <td>Tên sản phẩm</td>
-      <td>Giá tiền</td>
-      <td>Đơn vị</td>
-      <td>Số lượng</td>
-      <td>Ngày nhập hàng</td>
-      <td>Ngày sản xuất</td>
-      <td>Ngày hết hạn</td>
-      <td class="text-center">Chức năng</td>
-    </tr>
-    </thead>
-    <tbody>
-    <tr *ngFor="let pack of packageList | paginate:{itemsPerPage: 3, currentPage: page}; index as i">
-      <td>{{pack.code}}</td>
-      <td>{{pack.product.name}}</td>
-      <td>{{pack.product.price | currency:"VNĐ"}}</td>
-      <td>{{pack.product.currency}}</td>
-      <td>{{pack.quantity}}</td>
-      <td>{{pack.dateImport | date:"dd/MM/yyyy"}}</td>
-      <td>{{pack.dateStart | date:"dd/MM/yyyy"}}</td>
-      <td>{{pack.dateEnd | date:"dd/MM/yyyy"}}</td>
-      <td class="text-center">
-        <button type="button"
-                (click)='temp = pack'
-                class="btn btn-danger"
-                data-toggle="modal"
-                data-target="#exampleModal">
-          Xóa
-        </button>
-      </td>
-    </tr>
-    </tbody>
-  </table>
-</div>
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-     aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h4 class="modal-title text-warning" id="exampleModalLabel">Cảnh báo!!</h4>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+<div class="text-center ">
+  <form [formGroup]="packageSearchForm" (ngSubmit)="search()" class="mb-3">
+    <div class="form-row d-flex align-items-end">
+      <div class="form-group col-md-2">
+        <div class="input-group">
+          <span class="input-group-text">Tên sản phẩm</span>
+          <input type="text" class="form-control me-2" placeholder="" formControlName="productId">
+        </div>
       </div>
-      <div class="modal-body w-100">
+      <div class="form-group col-md-4">
+        <div class="input-group">
+          <span class="input-group-text">Ngày hết hạn</span>
+          <input type="date" class="form-control me-2" placeholder="Ngày hết hạn" formControlName="endDate">
+        </div>
+      </div>
+
+      <!--        <div class="input-group col-md-4">-->
+      <!--          <span class="input-group-text">Ngày nhập hàng 1</span>-->
+      <!--          <input type="date" class="form-control me-2" placeholder="Ngày sản xuất" formControlName="dateProduct1">-->
+      <!--        </div>-->
+
+      <!--        <div class="input-group col-md-4 mt-3">-->
+      <!--          <span class="input-group-text">Ngày nhập hàng 2 </span>-->
+      <!--          <input type="date" class="form-control me-2" placeholder="Ngày sản xuất" formControlName="dateProduct2">-->
+      <!--        </div>-->
+      <div class="form-group col-md-2">
+        <button class="btn btn-outline-success mt-3" type="submit">Search</button>
+        <button class="btn btn-outline-success mt-3 ml-3" (click)="reset()">Reset</button>
+      </div>
+    </div>
+  </form>
+  <div class="table-responsive mt-4">
+    <table class="table table-striped table-hover">
+      <thead>
+      <tr class="table-success">
+        <td>Mã lô hàng</td>
+        <td>Tên sản phẩm</td>
+        <td>Giá tiền</td>
+        <td>Đơn vị</td>
+        <td>Số lượng</td>
+        <td>Ngày nhập hàng</td>
+        <td>Ngày sản xuất</td>
+        <td>Ngày hết hạn</td>
+        <td class="text-center">Chức năng</td>
+      </tr>
+      </thead>
+      <tbody>
+      <!--    <tr *ngFor="let pack of packageList | paginate:{itemsPerPage: 3, currentPage: page}; index as i">-->
+      <tr *ngFor="let pack of packageList; index as i">
+        <td>{{pack.code}}</td>
+        <td>{{pack.product.name}}</td>
+        <td>{{pack.product.price | currency:"VNĐ"}}</td>
+        <td>{{pack.product.currency}}</td>
+        <td>{{pack.quantity}}</td>
+        <td>{{pack.dateImport | date:"dd/MM/yyyy"}}</td>
+        <td>{{pack.dateStart | date:"dd/MM/yyyy"}}</td>
+        <td>{{pack.dateEnd | date:"dd/MM/yyyy"}}</td>
+        <td class="text-center">
+          <button type="button"
+                  (click)='temp = pack'
+                  class="btn btn-danger"
+                  data-toggle="modal"
+                  data-target="#exampleModal">
+            Xóa
+          </button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+       aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title text-warning" id="exampleModalLabel">Cảnh báo!!</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body w-100">
         <span>Bạn có muốn xóa thông tin lô hàng nhập ngày <span
           class="text-danger">{{temp.dateImport | date:"dd/MM/yyyy"}}</span>?</span>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button (click)="delete(temp)" type="button" data-dismiss="modal" class="btn btn-primary">Xóa</button>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button (click)="delete(temp)" type="button" data-dismiss="modal" class="btn btn-primary">Xóa</button>
+        </div>
       </div>
     </div>
   </div>
-</div>
-<div class="d-flex justify-content-end">
-  <pagination-controls (pageChange)="page = $event"></pagination-controls>
+  <!--<div class="d-flex justify-content-end">-->
+  <!--  <pagination-controls (pageChange)="page = $event"></pagination-controls>-->
+  <!--</div>-->
+
+  <div class="d-flex justify-content-end">
+    <nav aria-label="...">
+      <ul class="pagination">
+        <li [ngClass]="'page-item ' + (page <= 0 ? 'disabled':'')">
+          <a class="page-link"
+             (click)="getPreviousPage()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-left"
+                 viewBox="0 0 16 16">
+              <path
+                d="M10 12.796V3.204L4.519 8 10 12.796zm-.659.753-5.48-4.796a1 1 0 0 1 0-1.506l5.48-4.796A1 1 0 0 1 11 3.204v9.592a1 1 0 0 1-1.659.753z"/>
+            </svg>
+          </a>
+        </li>
+
+        <li *ngFor="let pageNumber of totalPageList"
+            [ngClass]="'page-item ' + (pageNumber==page ? 'active':'')">
+          <a class="page-link" (click)="getNumberPage(pageNumber)">{{pageNumber + 1}}</a>
+        </li>
+
+        <li [ngClass]="'page-item ' + (page >= totalPages - 1 ? 'disabled':'')">
+          <a class="page-link"
+             (click)="getNextPage()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right"
+                 viewBox="0 0 16 16">
+              <path
+                d="M6 12.796V3.204L11.481 8 6 12.796zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753z"/>
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
 </div>

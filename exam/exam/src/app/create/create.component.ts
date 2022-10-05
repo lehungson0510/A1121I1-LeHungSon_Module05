@@ -21,7 +21,7 @@ export class CreateComponent implements OnInit {
     product: {}
   };
 
-  date = formatDate(new Date(), 'yyyy-MM-dd', 'en_US');
+  // date = formatDate(new Date(''), 'yyyy-MM-dd', 'en_US');
 
   constructor(private productService: ProductService,
               private packageService: PackageService,
@@ -35,9 +35,9 @@ export class CreateComponent implements OnInit {
       code: new FormControl('', [Validators.required, Validators.pattern('LH-\\d{4}')]),
       product: new FormControl('', [Validators.required]),
       quantity: new FormControl('', [Validators.required, Validators.min(1)]),
-      dateImport: new FormControl(this.date, [Validators.required]),
-      dateStart: new FormControl(this.date, [Validators.required]),
-      dateEnd: new FormControl(this.date, [Validators.required]),
+      dateImport: new FormControl('', [Validators.required]),
+      dateStart: new FormControl('', [Validators.required]),
+      dateEnd: new FormControl('', [Validators.required]),
     }, identityRevealedValidator);
   }
 

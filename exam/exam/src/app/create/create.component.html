@@ -55,6 +55,7 @@
            *ngIf="packForm.get('dateEnd').invalid && (packForm.get('dateEnd').touched||packForm.get('dateEnd').dirty)">
       Không để trống!
     </small>
+<!--    *ngIf="packForm.hasError('dateError')&&(packForm.get('dateEnd').touched||packForm.get('dateStart').touched||packForm.get('dateImport').touched)"-->
     <div
       *ngIf="packForm.hasError('dateError')&&(packForm.get('dateEnd').touched||packForm.get('dateStart').touched||packForm.get('dateImport').touched)"
       class="text-danger">
